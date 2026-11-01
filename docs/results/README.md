@@ -9,6 +9,8 @@ These JSON manifests record local implementation milestones:
 | [step8-monitoring.json](step8-monitoring.json) | Optional worker exporter, real monitoring stack, evidence reconciliation and a small overhead pilot |
 | [step9-artifact.json](step9-artifact.json) and [step9-runs.csv](step9-runs.csv) | Frozen 1,039-row known-fixture artifact campaign; broader publication-readiness gates remain open |
 | [step9-verification.json](step9-verification.json) | Regression, offline audit, packaged sample, source checks and target cleanup for Step 9A |
+| [step9b-native-read.json](step9b-native-read.json) and [step9b-verification.json](step9b-verification.json) | Separate 36-invocation shared-input native-read pilot, trace coverage and verification; native fault labels/defect recall remain unevaluated |
+| [step9b-screening.json](step9b-screening.json) | Thirteen independently sourced entries triaged; no external defective/fixed pair executed |
 
 They are historical summaries, not raw datasets or final effectiveness results. Seeded lab defects, existing-application non-findings and native-tool diagnostics have different meanings and remain separate in the guides. No confirmed natural revocation bypass or comparative improvement is established by these milestones.
 
@@ -21,3 +23,5 @@ To generate new records, follow the [native pilot guide](../external-pilots.md),
 Current implementation scope and milestone test counts are tracked in [implementation status](../implementation-status.md). Final matched budgets, held-out experiments and research claims remain the Step 9 evaluation described in [research comparisons](../research-comparisons.md).
 
 The Step 9A summary and CSV correspond to [artifact-v1.json](../../benchmarks/artifact-v1.json). Raw rows and their file indexes are retained in the local artifacts/evaluation-v1 directory and an audit bundle. CSV evidence paths are relative to that campaign directory, not files distributed beside this CSV. Read [the results discussion](../evaluation-results.md) before interpreting its counts.
+
+The Step 9B aggregate corresponds to [native-read-v1.json](../../benchmarks/native-read-v1.json) and the separate local artifacts/native-read-v1 campaign. Its raw evidence and source snapshot are packaged separately from the immutable Step 9A bundle. Later executable changes must not be applied retrospectively to either freeze. Read the [native-read guide](../native-read-comparison.md) for run, stop, resume and offline-audit instructions.

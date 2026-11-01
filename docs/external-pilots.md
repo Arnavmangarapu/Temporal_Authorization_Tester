@@ -2,6 +2,8 @@
 
 Two independent existing codebases now work end to end: Gitea 28.3.0 and PocketBase 0.40.6. The tester calls their native APIs in fresh local instances. It does not replace their authorization logic with the document lab. These are development pilots; no revocation bypass or comparative improvement has been established.
 
+The commands below retain their original compatibility scope. A separate [Step 9B shared-input pilot](native-read-comparison.md) prepares identical post-transition role/resource semantics for the native runners and records independent trace coverage. It does not reinterpret these older runs as matched effectiveness results.
+
 **Application screening and adaptation**
 
 | Candidate | Decision | Policy and adaptation |

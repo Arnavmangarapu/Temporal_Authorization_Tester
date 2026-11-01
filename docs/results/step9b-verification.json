@@ -1,0 +1,42 @@
+{
+  "schema_version": "step9b-verification-1",
+  "checkpoint": "Shared native post-transition read inputs and external defect screening",
+  "broader_step9_complete": false,
+  "protocol_sha256": "9edb32be11ca88d67ee43e86cfa3cf2dda41136a8bf14def8a9713c0cc390b5e",
+  "tests": {"command": "python -m pytest -q", "passed": 362, "seconds": 116.00, "new_comparison_tests": 14},
+  "campaign": {
+    "directory": "artifacts/native-read-v1",
+    "expected": 36,
+    "recorded": 36,
+    "completed": 36,
+    "intended_recipient_get_exercised": 36,
+    "controls_valid": 36,
+    "independent_trace_candidates": 0,
+    "independent_trace_inconclusive": 0,
+    "recipient_get_requests": 572,
+    "recipient_get_by_driver": {"scripted": 12, "evomaster": 548, "restler": 12},
+    "total_http_requests": 2165,
+    "native_forwarded_requests": 1300,
+    "harness_postcheck_requests_per_invocation": 3,
+    "pocketbase_credential_bytes_equal": {"invocations": 16, "denominator": 18},
+    "raw_run_files": 612,
+    "development_smokes_included": false,
+    "native_fault_labels_evaluated": false,
+    "defective_target_denominator": null,
+    "recall": null
+  },
+  "identities": {
+    "restler_commit": "6d984deedbc54aad957fa3da0c7e9e5df23a2aee",
+    "restler_image_id_all_invocations": "sha256:bf9baa01fa78ffb318928a0786a80d16df34c3c452268a3cdee1537189a4a07c",
+    "evomaster_version": "6.2.0",
+    "evomaster_jar_sha256": "93f9c4a0de88b01395d2a1009776aa739973e9f64343778d2fd49c212fd17915",
+    "gitea_binary_sha256": "5f834e8f04986f3b9206cf14743b5a6e6996ceddc238dac6409866ebda2a0686",
+    "pocketbase_binary_sha256": "8e9805c9d92c50a4ff2bce97579d13e2ddfa138cab10cf6f9e8f6db8016ffa30"
+  },
+  "offline_audit": {"rows": 36, "source_hashes_match": true, "evidence_hashes_match": true, "regenerated_analysis_matches": true},
+  "step9a_preserved": {"rows": 1039, "source_commit": "cb719ac0ae105f6a9add5ef89c5353a54db04a38", "source_evidence_and_regenerated_analysis_csv_match": true},
+  "export_checks": {"credential_exchange_bodies_omitted": true, "credential_pattern_scan_matches": 0, "scope": "Pattern scan plus existing redactor regression; not a proof of absence of all sensitive information"},
+  "cleanup": {"owned_native_target_processes_remaining": 0, "restler_containers_remaining": 0},
+  "external_screening": {"entries_triaged": 13, "fixes_inspected": 2, "defective_fixed_pairs_executed": 0},
+  "open_gates": ["Independently reproduced defective/fixed application pairs", "Native fault-label evaluation", "Held-out defect-family assessment", "Independent policy/mutation review", "Novelty and publication claims"]
+}

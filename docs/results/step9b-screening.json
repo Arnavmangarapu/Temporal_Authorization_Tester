@@ -1,0 +1,70 @@
+{
+  "schema_version": "external-defect-screening-1",
+  "review_date": "2026-11-01",
+  "benchmark": "ANSWER-OSU/Defects4REST",
+  "benchmark_commit": "265db1165e54b01a0698af0fd28d345169a5449f",
+  "scope": "All four T3 and nine storage/access entries in executable bug_replication/README.md; remaining categories not exhaustively screened",
+  "executable_cases_in_snapshot": 110,
+  "cases_screened": 13,
+  "cases_executed": 0,
+  "blind_held_out": false,
+  "independent_human_review": false,
+  "cases": [
+    {
+      "repository": "Dolibarr/dolibarr",
+      "issue": 26066,
+      "buggy_sha_from_benchmark": "c16313007a90010524cafba67acadcce036b6a9f",
+      "patch_sha_from_benchmark": ["62ad3d12d2ee86f2f665f341565860f3e88b076a"],
+      "patch_source_inspected": true,
+      "decision": "candidate_static_authorization_diagnostic",
+      "temporal_defect_established": false,
+      "oracle_discrepancy": "Replication expects 403; inspected fixing commit throws 401. Check protected data and controls rather than status alone."
+    },
+    {
+      "repository": "mastodon/mastodon",
+      "issue": 30103,
+      "buggy_sha_from_benchmark": "33368e3e79a6edfcaf65fd2b80b636a7c1e56e48",
+      "patch_sha_from_benchmark": ["61b7a04528e875e61361bb22ed3b45fbee38f3fd"],
+      "patch_source_inspected": true,
+      "decision": "candidate_future_concurrency_subscription_effect_extension",
+      "supported_by_current_adapter": false,
+      "oracle_discrepancy": "Replication expects GET after deletion to return empty 200; fixed controller uses not-found when no subscription exists.",
+      "unresolved": ["Reproducible buggy/fixed pair", "Valid push keys and local receiver", "Concurrency schedule", "Queue and in-flight delivery semantics"]
+    },
+    {
+      "repository": "ansible/awx",
+      "issue": 7243,
+      "buggy_sha_from_benchmark": "f75a0ca1b622103ca2e1bfce8c8aef4acd02ffb6",
+      "patch_sha_from_benchmark": ["6062d1ec9f27006603257ff0b01a7d3dbbec2874", "ba2fd6f801f9f54d810cf95496d20792209be1a5"],
+      "patch_source_inspected": false,
+      "decision": "exclude_from_authorization_effect_denominator",
+      "reason": "Reported 500 versus 401 does not establish protected disclosure or unauthorized effect"
+    },
+    {
+      "repository": "enviroCar/enviroCar-server",
+      "issue": 45,
+      "buggy_sha_from_benchmark": "8f9a164690f2c3a82865c429ce07eaa42c7940d8",
+      "patch_sha_from_benchmark": ["7fe9f59a86651129da58550fd8cf6ca0e47c7e46", "2395af8429aba2819acc6362528471b8a93e3fcf", "4902e3ecaa7085bd3a89ba8c0a11c8d661921caa"],
+      "patch_source_inspected": false,
+      "decision": "exclude_from_post_transition_violation_denominator",
+      "reason": "Deletion fails; successful permission transition and its bound are not established"
+    },
+    {
+      "repository": "Dolibarr/dolibarr",
+      "issue": 29372,
+      "buggy_sha_from_benchmark": "26a750ee0a64f283f17ace7a54a673481ca1c16d",
+      "patch_sha_from_benchmark": ["a6f48573fbbe72970b9f1605ecc4c48c0285482b", "c24fda189fc3628089e95152d85cd69fed14ebbb"],
+      "patch_source_inspected": false,
+      "decision": "defer_browser_page_static_authorization_candidate",
+      "reason": "Reported monthly-report entry point is HTML/PHP rather than the supported REST adapter"
+    },
+    {"repository": "nocodb/nocodb", "issue": 7535, "decision": "exclude_current_over_permission_denominator", "reason": "Intended notification feature is denied; no unauthorized post-revocation effect established"},
+    {"repository": "flowable/flowable-engine", "issue": 3003, "decision": "exclude", "reason": "Incorrect form MIME type"},
+    {"repository": "containers/podman", "issue": 13831, "decision": "exclude", "reason": "Remote build file/path failure"},
+    {"repository": "containers/podman", "issue": 15720, "decision": "exclude", "reason": "Incorrect volume usage accounting"},
+    {"repository": "seaweedfs/seaweedfs", "issue": 1776, "decision": "exclude", "reason": "S3 nonexistent-object deletion status compatibility; linked replication directory absent at screened commit", "upstream_issue_inspected": true},
+    {"repository": "seaweedfs/seaweedfs", "issue": 4088, "decision": "exclude_current_over_permission_denominator", "reason": "Read-only-volume availability/over-restriction"},
+    {"repository": "seaweedfs/seaweedfs", "issue": 4270, "decision": "exclude", "reason": "Existing-directory creation error/status handling"},
+    {"repository": "seaweedfs/seaweedfs", "issue": 5864, "decision": "exclude", "reason": "Reported file availability failure without unauthorized effect"}
+  ]
+}

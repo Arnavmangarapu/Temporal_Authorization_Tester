@@ -2,6 +2,8 @@
 
 This stage adds a reproducible experimental workload, immutable protocol/source fingerprints, raw evidence indexes, resumable execution and analysis. It evaluates the implemented artifact on known controlled fixtures and two supported existing applications. It does not turn development fixtures into held-out data or establish a publishable novelty claim.
 
+This guide describes the frozen Step 9A snapshot. Later executable changes intentionally cause its source check to fail in a newer checkout; use commit `cb719ac0ae105f6a9add5ef89c5353a54db04a38` or that campaign's archived source. The separate [Step 9B native-read protocol](native-read-comparison.md) does not replace or rewrite Step 9A evidence.
+
 The frozen corpus has 29 configurations: sharing/role/ownership × read/write × four lab modes, plus five explicitly labeled response/policy/availability controls. Ten configurations expose planted defects, sixteen are correct and three must be inconclusive. The ten defective configurations represent only **two root-cause families**: retained authorization snapshots and committing writes before returning denial. The error-status disclosure overlay is another representation of the snapshot defect, not a third root cause. Expected labels come from target source review, independent target tests and manual-API overlay ground-truth tests. These fixtures were used in development; no independent human mutation review or unseen defect-family generalization is claimed.
 
 Correctness labels apply to the selected workflow and protected action. In particular, a read-only check in write_side_effect mode has a correct read path even though that fixture contains a write defect. A non-finding does not certify the entire application.
