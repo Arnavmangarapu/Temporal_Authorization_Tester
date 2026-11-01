@@ -1,0 +1,66 @@
+schema_version: '2'
+name: sharing-write-lifecycle
+base_url: http://127.0.0.1:8001
+actors:
+  alice:
+    username: alice
+    password_env: LAB_ALICE_PASSWORD
+  bob:
+    username: bob
+    password_env: LAB_BOB_PASSWORD
+operations:
+  login:
+    method: POST
+    path: /auth/login
+  create_document:
+    method: POST
+    path: /documents
+  grant_share:
+    method: POST
+    path: /documents/{document_id}/shares
+  revoke_share:
+    method: DELETE
+    path: /documents/{document_id}/shares/{subject_id}
+  read_document:
+    method: GET
+    path: /documents/{document_id}
+  write_document:
+    method: PATCH
+    path: /documents/{document_id}
+  change_role:
+    method: POST
+    path: /users/{subject_id}/role
+  transfer_owner:
+    method: POST
+    path: /documents/{document_id}/owner
+authentication:
+  kind: bearer_login
+  login_operation: login
+  token_pointer: /access_token
+policy:
+  lifecycle: sharing_revocation
+  expected_access_after_transition: denied
+  timing:
+    mode: bounded
+    anchor: transition_acknowledged
+    max_delay_seconds: 5.0
+    tolerance_seconds: 0.05
+    source: 'Document-lab contract: lifecycle changes enforced within 5 seconds of
+      acknowledgement.'
+  action: write
+workflow:
+  owner: alice
+  subject: bob
+  control: alice
+  operations:
+    create_resource: create_document
+    establish_access: grant_share
+    transition: revoke_share
+    read_resource: read_document
+    write_resource: write_document
+  protected_field: /content
+budget:
+  max_requests: 500
+  max_runtime_seconds: 600.0
+  request_timeout_seconds: 10.0
+  poll_interval_seconds: 0.25

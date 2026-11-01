@@ -1,0 +1,23 @@
+[
+  {
+    "key": "pocketbase",
+    "version": "0.40.6",
+    "name": "pocketbase_0.40.6_linux_amd64.zip",
+    "url": "https://github.com/pocketbase/pocketbase/releases/download/v0.40.6/pocketbase_0.40.6_linux_amd64.zip",
+    "sha256": "0e1f609158ed945f809f8a02ae012aa0427129c66ebb63c1aee76f2c0309373f"
+  },
+  {
+    "key": "gitea",
+    "version": "28.3.0",
+    "name": "gitea-28.3.0-linux-amd64.xz",
+    "url": "https://github.com/go-gitea/gitea/releases/download/v28.3.0/gitea-28.3.0-linux-amd64.xz",
+    "sha256": "34e2e09e2fb1785def4f4802088d17c0c77eec32d1acf997e8463e2e428cce56"
+  },
+  {
+    "key": "evomaster",
+    "version": "6.2.0",
+    "name": "evomaster.jar",
+    "url": "https://github.com/WebFuzzing/EvoMaster/releases/download/v6.2.0/evomaster.jar",
+    "sha256": "93f9c4a0de88b01395d2a1009776aa739973e9f64343778d2fd49c212fd17915"
+  }
+]

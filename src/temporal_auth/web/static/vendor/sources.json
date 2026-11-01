@@ -1,0 +1,22 @@
+[
+  {
+    "file": "htmx.min.js",
+    "url": "https://raw.githubusercontent.com/bigskysoftware/htmx/v2.0.8/dist/htmx.min.js",
+    "sha256": "22283ef68cb7545914f0a88a1bdedc7256a703d1d580c1d255217d0a50d31313"
+  },
+  {
+    "file": "htmx-LICENSE.txt",
+    "url": "https://raw.githubusercontent.com/bigskysoftware/htmx/v2.0.8/LICENSE",
+    "sha256": "d3d2456f76414f2456104660ebd65aff1c04cd7966b942bdabd63f3cdb316a38"
+  },
+  {
+    "file": "PublicSans.ttf",
+    "url": "https://raw.githubusercontent.com/google/fonts/main/ofl/publicsans/PublicSans%5Bwght%5D.ttf",
+    "sha256": "d75a7dc1a27eb9e336d5b33f55489d2ecb5621bf694d5c43b2415bce2ca830a8"
+  },
+  {
+    "file": "PublicSans-OFL.txt",
+    "url": "https://raw.githubusercontent.com/google/fonts/main/ofl/publicsans/OFL.txt",
+    "sha256": "157a9e77f7580246e97c769490e2e977ae94399f9d30f4556015c41fe8c28bac"
+  }
+]

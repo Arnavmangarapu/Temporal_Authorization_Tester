@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="csrf-token" content="{{ csrf }}">
+  <meta name="htmx-config" content='{"allowEval":false,"allowScriptTags":false,"includeIndicatorStyles":false,"historyCacheSize":0}'>
+  <title>{% block title %}Experiments{% endblock %} · Temporal Auth</title>
+  <link rel="icon" href="/static/mark.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/static/workspace.css">
+  <script src="/static/vendor/htmx.min.js" defer></script>
+  <script src="/static/workspace.js" defer></script>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<aside class="sidebar">
+  <a class="brand" href="/" aria-label="Temporal Auth home"><img src="/static/mark.svg" alt="" width="35" height="35"><span>Temporal<span class="brand-second">Auth</span></span></a>
+  <div class="workspace-label">Experiment workspace</div>
+  <nav aria-label="Main navigation">
+    <a href="/" {% if nav == 'experiments' %}aria-current="page"{% endif %}><span aria-hidden="true">▤</span> Experiments</a>
+    <a href="/?view=findings" {% if nav == 'findings' %}aria-current="page"{% endif %}><span aria-hidden="true">◇</span> Findings</a>
+    <a href="/new" {% if nav == 'new' %}aria-current="page"{% endif %}><span aria-hidden="true">＋</span> New experiment</a>
+  </nav>
+  <div class="sidebar-note"><svg viewBox="0 0 160 70" aria-hidden="true"><path d="M8 18H110M8 36H64M94 36H150M8 54H150"/><path class="cut" d="M78 7V65"/><circle cx="78" cy="36" r="7"/></svg><p>Access changes.<br>Evidence stays.</p><span>Local research workspace</span></div>
+  <div class="worker-state"><span class="state-dot {% if worker_healthy %}ready{% endif %}"></span><div>One local worker<small>{% if worker_error %}Worker unavailable{% elif worker_healthy %}Ready for experiments{% else %}Starting worker{% endif %}</small></div></div>
+</aside>
+<div class="workspace">
+  <header class="topbar"><span>Temporal authorization testing</span><span class="local-tag"><span aria-hidden="true">⌂</span> Local workspace</span></header>
+  <main id="main" tabindex="-1">{% if worker_error %}<div class="notice error" role="alert">{{ worker_error }}</div>{% endif %}{% block content %}{% endblock %}</main>
+  <footer>Policy-aware checks. Reproducible evidence.<span>Research prototype · v0.1</span></footer>
+</div>
+<div id="toast" role="status" class="toast" hidden></div>
+</body>
+</html>

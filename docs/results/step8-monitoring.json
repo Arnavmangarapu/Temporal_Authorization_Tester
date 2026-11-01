@@ -1,0 +1,130 @@
+{
+  "date": "2026-11-01",
+  "scope": "Step 8 optional local worker monitoring. Seeded functional verification and small overhead pilot; no comparative effectiveness or natural vulnerability claim.",
+  "regression": {
+    "command": "python -m pytest -q",
+    "passed": 328,
+    "seconds": 113.12,
+    "monitoring_tests": 10,
+    "focused_passed": 10,
+    "focused_seconds": 8.66
+  },
+  "environment": {
+    "python": "3.14.8",
+    "prometheus_client": "0.23.1",
+    "prometheus_base": "prom/prometheus:v3.5.0@sha256:63805ebb8d2b3920190daf1cb14a60871b16fd38bed42b857a3182bc621f4996",
+    "grafana_base": "grafana/grafana:12.1.1@sha256:a1701c2180249361737a99a01bc770db39381640e4d631825d38ff4535efa47d",
+    "networking": "Linux host networking; loopback listeners; public provisioning copied into local images"
+  },
+  "real_stack": {
+    "monitored_jobs": 6,
+    "unmonitored_jobs": 3,
+    "recorded_http_events": 198,
+    "completed_sequences_including_clean_replays": 12,
+    "confirmed_seeded_finding_signatures": 2,
+    "confirmed_jobs": 3,
+    "exact_metrics": {
+      "temporal_auth_requests_total": 198.0,
+      "temporal_auth_request_duration_seconds_count": 198.0,
+      "temporal_auth_request_duration_seconds_sum": 2.056410699009575,
+      "temporal_auth_jobs_finished_total": 6.0,
+      "temporal_auth_terminal_job_budget_requests_total": 250.0,
+      "temporal_auth_terminal_job_fixture_requests_total": 64.0,
+      "temporal_auth_confirmed_finding_signatures": 2.0,
+      "temporal_auth_sequences_completed_total": 12.0
+    },
+    "all_expected_metrics_match": true,
+    "promtool": "configuration valid",
+    "prometheus": {
+      "health": "up",
+      "scrapeUrl": "http://127.0.0.1:9464/metrics"
+    },
+    "grafana": {
+      "uid": "temporal-auth-worker",
+      "queries_validated": 13,
+      "datasource_proxy_verified": true
+    },
+    "restart_reconstructed_requests": 198,
+    "restart_reconstructed_sequences": 12,
+    "restart_reconstructed_finding_signatures": 2
+  },
+  "overhead_pilot": {
+    "samples_per_setting": 3,
+    "disabled_median_seconds": 5.759981356000935,
+    "monitored_median_seconds": 5.865692092000245,
+    "median_relative_difference_percent": 1.8352617737065646,
+    "limitations": "Small local wall-time pilot includes five-second policy wait, startup and polling. No claim of negligible overhead or statistical significance."
+  },
+  "browser": {
+    "page_errors": [],
+    "failed_api_responses": [],
+    "url": "http://127.0.0.1:3000/d/temporal-auth-worker/temporal-auth-c2b7-worker?from=2026-11-01T13:47:08.155Z&to=2026-11-01T13:48:58.630Z&timezone=browser&orgId=1&refresh=5s",
+    "dashboard_version": 2,
+    "dashboard_visible": true,
+    "screenshot": "artifacts/step8-monitoring/final/grafana-dashboard.png"
+  },
+  "wheel": {
+    "path": "/tmp/temporal-auth-step8-wheel/temporal_auth_tester-0.1.0-py3-none-any.whl",
+    "sha256": "3c564b49633a894aad9f326f6ee1c367130cbb82cb9cd58caeefdf913cbe520c",
+    "modules_match_source": true,
+    "optional_metadata_verified": true,
+    "outside_checkout_http_smoke": {
+      "module": "/tmp/temporal-auth-step8-installed/temporal_auth/monitoring.py",
+      "job_id": "678a996f-868f-4610-ae4e-86f974d1a549",
+      "status": "completed",
+      "verdict": "no_violation_observed",
+      "worker_exporter_http_status": 200
+    }
+  },
+  "cleanup": {
+    "owned_processes_remaining": [],
+    "project_containers_remaining": [],
+    "sqlite": {
+      "monitored": {
+        "integrity": "ok",
+        "active_jobs": 0
+      },
+      "disabled": {
+        "integrity": "ok",
+        "active_jobs": 0
+      },
+      "packaged": {
+        "integrity": "ok",
+        "active_jobs": 0
+      }
+    },
+    "monitoring_volumes_retained": true
+  },
+  "source_sha256": {
+    "src/temporal_auth/monitoring.py": "d598fe359d4295d5b95138809a5fef5b06e163dd74e3dd7d6413e0f1bb60c56f",
+    "src/temporal_auth/cli.py": "71a65096ef62c88b07f1d5e63ff567eb465263f3ebef60c2373b6faf02a16973",
+    "src/temporal_auth/web/app.py": "be46dfaf86bab2521cd433b8377d2fd4d8af81696c19c12348ac1a0c0ecc06d3",
+    "src/temporal_auth/web/supervisor.py": "daf540ffd45d98e20c5f1e12bd6298d9fb8159e71a8b4b04aedf6dba617100fd",
+    "src/temporal_auth/web/worker.py": "5ccd35d1570d753b539b866edb08d4806a9e9caefe6c9dc0231a68ecb8063b71",
+    "tests/test_monitoring.py": "497aac8d7899225f34cd9675877ab1deb7c7161b047b0b740cfab227fc612976",
+    "scripts/test_monitoring_stack.py": "830614c88af309b199b87e8031a5025f43760251c92da647bc67b838200b7cb4",
+    "pyproject.toml": "40254ff23d8d53bec1c6bc4c48b13b5184f6685098c0d89d43cc44e276bccc49",
+    "compose.yaml": "0b8938c94a6baaf001ad8ab28a93fea16a0418fee541a2c00e243232bfb807f2",
+    ".dockerignore": "0151fb32ea6c9211ac2fe933a2ff1b8e272f50d1290a987107320788506b56fa",
+    "README.md": "060a8c4816c463ceff8bb6e8607658026918911fcb913119c13ce8a797846f82",
+    "docs/monitoring.md": "e79654a538e1846df9b2ce8b15cc0b22b057894f92d3f2134606f9bfa2736316",
+    "docs/implementation-status.md": "1c77fe4d9a320f9dc9005fc6771e665556500e64c39c26956cb0ec1dd9930676",
+    "docs/web-interface.md": "be74e4aa7b6f3c9c5e5b13197e085b39580efcdeb62044c514061dd157a37ac9",
+    "docs/external-pilots.md": "938155116dab90e8a37a7e86598ec1e50e41b31964d3850e2b1e06e9639eff81",
+    "monitoring/Grafana.Dockerfile": "18183f61b621c3967d6d69501df2cd0c40ff135e47108a24a27c4e2b795ac023",
+    "monitoring/Prometheus.Dockerfile": "4fa0cb39232ebb801084b69af7db590fa127bdd66bc23b922606b4ced8ca68e3",
+    "monitoring/grafana/dashboards/temporal-auth.json": "1f82707de7337e7eb4cef73980ead4b13c510b705b39cec301a31457045ae319",
+    "monitoring/grafana/provisioning/dashboards/temporal-auth.yml": "d1e84c128ae2017e2ae9782b37459278b435c794f2e629690c3f222cc8f0befc",
+    "monitoring/grafana/provisioning/datasources/prometheus.yml": "43997f6a9ae20db86c188928eced28c31e087231c239683bfa1cceedfd519aef",
+    "monitoring/prometheus.yml": "723073ff34b60cfbcfedfb966823ce08867a8fc55a7b398e2fa7eb52bb96dcd1"
+  },
+  "artifact_sha256": {
+    "artifacts/step8-monitoring/final/report.json": "5cc449d5cabc43f617292816b63a56969260470aa3571fa0e69370f6700d7ec3",
+    "artifacts/step8-monitoring/final/report.prom": "be957062c9771e638c6a2f3d932aac5c45da102cbc37a5dd4d3daf894b231571",
+    "artifacts/step8-monitoring/final/browser.json": "a0de124bbfd45ee6fba5b09aef51637db071fe10de15c29ab4f92801e5aeda12",
+    "artifacts/step8-monitoring/final/grafana-dashboard.png": "ffbac07cc9fd758ef2030fe93a04d6d0a07cec0687fdb55df011ffea90e5c9b6",
+    "artifacts/step8-monitoring/final/package-smoke.json": "03bf05e71198834ca89db98c08aef2448e9546abe498bd44e19c4f850f781bb0",
+    "artifacts/step8-monitoring/final/cleanup.json": "59838cc74b4fbe27d0b064ad30d21d019edba914e679d58fee65141363f2bd79",
+    "artifacts/step8-monitoring/final/evidence-sha256.json": "7e34fb0ca04facff4cfec2c85f328aceee5fa7ca573e6f3626383a2ca739db78"
+  }
+}

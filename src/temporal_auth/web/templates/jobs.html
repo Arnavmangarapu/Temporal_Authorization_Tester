@@ -1,0 +1,15 @@
+<section id="job-list" hx-get="/fragments/jobs?view={{ view }}" hx-trigger="every 2s" hx-swap="outerHTML" aria-label="Experiment history">
+{% if jobs %}
+<div class="table-wrap"><table class="runs-table"><thead><tr><th>Experiment</th><th>State</th><th>Verdict</th><th>Requests</th><th>Created</th></tr></thead><tbody>
+{% for job in jobs %}<tr><td><a class="run-title" href="/runs/{{ job.id }}">{{ job.spec.title }}</a><span class="cell-subtext">{{ job.display_target }} · {% if job.spec.target in ['gitea','pocketbase'] %}Native read pilot{% else %}{{ job.display_lifecycle }} / {{ job.spec.action }}{% endif %}</span></td><td><span class="badge {{ job.status }}">{{ labels[job.status] }}</span></td><td>{% set verdict = job.result.get('verdict','not_evaluated') %}<span class="verdict-text {{ verdict }}">{{ labels.get(verdict,verdict) }}</span></td><td>{{ job.result.get('requests','—') }}</td><td class="date-cell">{{ job.created[:10] }}<span class="cell-subtext">{{ job.created[11:19] }} UTC</span></td></tr>{% endfor %}
+</tbody></table></div>
+<p class="table-caption">{{ jobs|length }} experiment{% if jobs|length != 1 %}s{% endif %} shown · latest 200 records</p>
+{% else %}
+<div class="empty-state">
+<div class="empty-illustration" aria-hidden="true"><div class="identity-line"><span class="identity-node">A</span><span class="permission-line"></span><span class="resource-node">▤</span></div><div class="identity-line subject"><span class="identity-node">B</span><span class="permission-line broken"></span><span class="revoked-node">×</span></div><span class="change-label">Access revoked</span></div>
+<h2>{% if view == 'findings' %}No findings to review{% elif view == 'active' %}No experiments in progress{% elif view == 'inconclusive' %}No inconclusive experiments{% else %}Start with a permission change{% endif %}</h2>
+<p>{% if view == 'all' %}Keep an old session, revoke its access, and check what it can still do. Your experiment and evidence will appear here.{% else %}Experiments matching this view will appear here. Open all experiments or start a new check.{% endif %}</p>
+<a class="button primary" href="/new">Create your first check</a><span class="empty-caption">A disposable lab is ready to use. No credentials needed.</span>
+</div>
+{% endif %}
+</section>

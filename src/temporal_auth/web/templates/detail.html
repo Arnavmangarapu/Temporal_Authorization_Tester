@@ -1,0 +1,7 @@
+{% extends 'base.html' %}
+{% block title %}{{ job.spec.title }}{% endblock %}
+{% block content %}
+<a class="back-link" href="/">‹ Experiments</a>
+<div class="page-heading detail-heading"><div><div class="track-label">{% if job.spec.target in ['managed_lab','configured_lab'] %}Controlled lab{% else %}Existing application pilot{% endif %}</div><h1>{{ job.spec.title }}</h1><p>{{ job.display_target }} · {% if job.spec.target in ['gitea','pocketbase'] %}{{ job.spec.profile }}{% else %}{{ job.display_lifecycle }} · Protected {{ job.spec.action }}{% endif %} · Seed {{ job.spec.seed }}</p></div><a class="button secondary" href="/runs/{{ job.id }}/evidence">Review evidence</a></div>
+{% include 'live.html' %}
+{% endblock %}

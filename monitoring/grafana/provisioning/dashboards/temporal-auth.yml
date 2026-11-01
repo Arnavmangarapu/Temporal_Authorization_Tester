@@ -1,0 +1,11 @@
+apiVersion: 1
+providers:
+  - name: Temporal Auth
+    orgId: 1
+    folder: Temporal Auth
+    type: file
+    disableDeletion: true
+    allowUiUpdates: false
+    updateIntervalSeconds: 10
+    options:
+      path: /etc/grafana/dashboards

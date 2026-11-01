@@ -1,0 +1,44 @@
+name: temporal-auth-monitoring
+services:
+  prometheus:
+    profiles: [monitoring]
+    image: temporal-auth-prometheus:3.5.0
+    build:
+      context: .
+      dockerfile: monitoring/Prometheus.Dockerfile
+    # Linux host networking reaches the worker's loopback-only exporter.
+    network_mode: host
+    command:
+      - --config.file=/etc/prometheus/prometheus.yml
+      - --storage.tsdb.path=/prometheus
+      - --storage.tsdb.retention.time=7d
+      - --web.listen-address=127.0.0.1:19090
+    volumes:
+      - prometheus-data:/prometheus
+    restart: "no"
+  grafana:
+    profiles: [monitoring]
+    image: temporal-auth-grafana:12.1.1
+    build:
+      context: .
+      dockerfile: monitoring/Grafana.Dockerfile
+    network_mode: host
+    environment:
+      GF_SERVER_HTTP_ADDR: 127.0.0.1
+      GF_SERVER_HTTP_PORT: "3000"
+      GF_AUTH_ANONYMOUS_ENABLED: "true"
+      GF_AUTH_ANONYMOUS_ORG_ROLE: Viewer
+      GF_AUTH_DISABLE_LOGIN_FORM: "true"
+      GF_AUTH_BASIC_ENABLED: "false"
+      GF_USERS_ALLOW_SIGN_UP: "false"
+      GF_ANALYTICS_REPORTING_ENABLED: "false"
+      GF_ANALYTICS_CHECK_FOR_UPDATES: "false"
+      GF_ANALYTICS_CHECK_FOR_PLUGIN_UPDATES: "false"
+      GF_PLUGINS_PREINSTALL_DISABLED: "true"
+      GF_LOG_LEVEL: warn
+    volumes:
+      - grafana-data:/var/lib/grafana
+    restart: "no"
+volumes:
+  prometheus-data:
+  grafana-data:

@@ -1,0 +1,8 @@
+{% extends 'base.html' %}
+{% block title %}{% if view == 'findings' %}Findings{% else %}Experiments{% endif %}{% endblock %}
+{% block content %}
+<div class="page-heading"><div><h1>{% if view == 'findings' %}Findings{% else %}Experiments{% endif %}</h1><p>{% if view == 'findings' %}Candidates and confirmed effects, kept separate from execution errors.{% else %}Test what happens after access changes.{% endif %}</p></div><a class="button primary" href="/new"><span aria-hidden="true">＋</span> New experiment</a></div>
+<nav class="tabs" aria-label="Filter experiments">{% for key,label in [('all','All experiments'),('active','In progress'),('findings','Findings'),('inconclusive','Inconclusive')] %}<a href="/?view={{ key }}" {% if view == key %}aria-current="page"{% endif %}>{{ label }}</a>{% endfor %}</nav>
+{% include 'jobs.html' %}
+<div class="principle-note"><span class="note-symbol" aria-hidden="true">ⓘ</span><p>A successful response is not enough to prove a bypass. Checks verify protected content or state changes, respect the policy window, and replay candidates from a clean state.</p></div>
+{% endblock %}
