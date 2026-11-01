@@ -1,5 +1,7 @@
 **External defect screening — Step 9B**
 
+Historical screening decisions below describe Step 9B. The subsequent [Step 9C reproduction](dolibarr-reproduction.md) executed Dolibarr #26066 and its upstream fix in three fresh pairs. The original screening manifest remains unchanged; its zero executed cases describes that earlier milestone. Mastodon and the other candidates have not been executed by this project.
+
 This is a source-based shortlist, not a reproduced benchmark or new vulnerability discovery. The screening covers all four entries explicitly assigned the authentication/authorization/session category and nine storage/access entries in the [Defects4REST executable list at commit 265db116](https://github.com/ANSWER-OSU/Defects4REST/blob/265db1165e54b01a0698af0fd28d345169a5449f/bug_replication/README.md). That release lists 110 executable cases across twelve projects. The remaining categories were not exhaustively screened; taxonomy membership is neither an inclusion rule nor proof of authorization failure. Thirteen entries were triaged from descriptions/reproduction documents; only the two fixes identified below were inspected at patch level.
 
 | Case | Evidence and problem | Decision for this project | Work needed before measurement |

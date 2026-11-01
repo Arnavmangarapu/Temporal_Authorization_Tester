@@ -88,8 +88,13 @@ class Recorder:
                             event["truncated"] = True
                             raise AdapterError("response_too_large")
                         body.extend(chunk)
+                    # iter_bytes() has already decoded HTTP content encodings.
+                    # Reusing compressed headers would decode the content again
+                    # and preserve an incorrect compressed Content-Length.
+                    decoded_headers = {key: value for key, value in response.headers.items()
+                                       if key.lower() not in {"content-encoding", "content-length"}}
                     result = httpx.Response(response.status_code, content=bytes(body),
-                                            headers=response.headers, request=response.request)
+                                            headers=decoded_headers, request=response.request)
                     if not secret:
                         event["body"] = self.redactor.clean(result.text)
                     return result

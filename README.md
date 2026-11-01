@@ -2,7 +2,7 @@
 
 A research project for testing authorization after permissions change. The first scenario is document-sharing revocation: preserve a recipient's session, revoke sharing, and check whether protected content remains accessible beyond the application's declared propagation bound.
 
-**Current implementation: Steps 1–8 and Step 9A complete; Step 9B shared-input pilot and defect screening complete. Broader research gates remain open.**
+**Current implementation: Steps 1–8, Step 9A, Step 9B and Step 9C's known external bug/fix reproduction complete. Broader research gates remain open.**
 
 Implemented: validated configuration, the controlled lab, seeded dependency-aware generation, bounded HTTP collection, read/write verification, clean confirmation and bounded minimization. A local website supports configuration, persistent jobs, live evidence, cancellation and replay downloads. Version two supports sharing, role and ownership changes with read/write probes. Native Gitea/PocketBase adapters and real EvoMaster/RESTler compatibility runs are available. Optional Prometheus/Grafana monitoring now follows worker evidence. Final comparative evaluation remains future work; no comparative improvement or natural revocation bypass is claimed.
 
@@ -16,7 +16,9 @@ The paper already derives functional sequences from models; its illustrated meth
 
 The first frozen artifact campaign recorded **1,039 checks across six tracks**. All scheduling ablations detected the same planted defects; no scheduling advantage was demonstrated. These known configurations represent only two root-cause families, and existing-application profiles yielded no observed bypass. See the [results and limitations](docs/evaluation-results.md). Held-out generalization, matched modern-tool effectiveness and publication novelty remain open.
 
-The follow-up [shared-input native read pilot](docs/native-read-comparison.md) completed **36 invocations**, with recipient GET coverage and valid controls in every invocation, and no observed bypass. It gives the real EvoMaster/RESTler integrations the same prepared post-transition resource and owner/recipient roles. Native fault labels remain separate from independent protected-content observations. The [external defect screen](docs/external-benchmark-screening.md) triages thirteen entries and records revision provenance and exclusion reasons; those cases are not yet integrated or counted as detected defects.
+The follow-up [shared-input native read pilot](docs/native-read-comparison.md) completed **36 invocations**, with recipient GET coverage and valid controls in every invocation, and no observed bypass. It gives the real EvoMaster/RESTler integrations the same prepared post-transition resource and owner/recipient roles. Native fault labels remain separate from independent protected-content observations. The [external defect screen](docs/external-benchmark-screening.md) triaged thirteen entries and recorded revision provenance and exclusion reasons; that screening milestone itself involved no external bug executions.
+
+The separate [Dolibarr reproduction](docs/dolibarr-reproduction.md) subsequently reproduced the known currency-permission bug and its upstream fix in **three fresh instance pairs**: the restricted user received the protected record from the buggy revision and was denied by the fixed revision, while positive controls worked in both. This is one previously reported static authorization defect, not a new vulnerability or a temporal/comparative improvement. The full regression now passes **385 tests**. This experiment runs through a source-checkout research CLI; it is not a new dashboard target.
 
 **Run and stop on Linux**
 

@@ -2,6 +2,8 @@
 
 This follow-up aligns the native tools' resource, credential roles and post-transition state. It is a scoped applicability/coverage pilot. It does not establish relative defect-detection effectiveness, because no known defective existing application is present. The original Step 9A campaign remains frozen and unchanged.
 
+This guide describes the Step 9B snapshot at commit `e91e4aad3b1c498d81e30231f483c2b92c7cd033`. Later source changes, including Step 9C's compressed-response collector correction, require the archived Step 9B source for its frozen run/audit. The [Dolibarr study](dolibarr-reproduction.md) is a separate campaign, and its known defective target does not retroactively change the scope of this pilot.
+
 **Common workflow**
 
 Each driver gets a new process/database with the same pinned application version and native adapter. Setup creates an ordinary recipient, a private resource and a random protected marker. The harness logs in before the change, verifies recipient and owner access, revokes collaboration in Gitea or downgrades the editor role in PocketBase, verifies the administrative state, logs in again and waits until the declared local bound plus 0.05-second tolerance has elapsed.

@@ -2,6 +2,7 @@
 
 from contextlib import contextmanager
 import copy
+import gzip
 import json
 from pathlib import Path
 from uuid import uuid4
@@ -16,6 +17,25 @@ from temporal_auth.integrations.pilot import (
     PilotBudget, Recorder, analyze_observations, profile_probes, run_pilot,
 )
 from temporal_auth.integrations.evomaster import recording_proxy
+
+
+def test_recorder_decodes_compressed_content_once_and_updates_length(tmp_path, monkeypatch):
+    payload = b'{"name":"protected-currency","padding":"' + b'x' * 1000 + b'"}'
+    original = httpx.Client
+    def client(*args, **kwargs):
+        kwargs["transport"] = httpx.MockTransport(lambda request: httpx.Response(
+            200, content=gzip.compress(payload), headers={"Content-Encoding": "gzip", "Content-Type": "application/json"}))
+        return original(*args, **kwargs)
+    monkeypatch.setattr(httpx, "Client", client)
+    recorder = Recorder("http://fixture", PilotBudget(10, 10), tmp_path / "events.jsonl")
+    try:
+        response = recorder.request("compressed", "GET", "/api/currency")
+        assert response.content == payload
+        assert "content-encoding" not in response.headers
+        assert int(response.headers["content-length"]) == len(payload)
+        assert recorder.events[0]["body"] == payload.decode()
+        assert recorder.events[0]["error"] is None
+    finally: recorder.close()
 
 
 def observed_trace():

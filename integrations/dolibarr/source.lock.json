@@ -1,0 +1,11 @@
+{
+  "case": "Dolibarr/dolibarr#26066",
+  "source_version_string": "19.0.0-dev",
+  "changed_file": "htdocs/multicurrency/class/api_multicurrencies.class.php",
+  "revisions": {
+    "buggy": {"commit": "c16313007a90010524cafba67acadcce036b6a9f", "archive_sha256": "80a9e853612eed283533cd84361ab7d978c0a1cd983d47700164e89f4c60c96c", "handler_sha256": "e420d2039d37a3f8b62bef094a2323b9f17ca761630d1e1cdfd9388dad53260a"},
+    "fixed": {"commit": "62ad3d12d2ee86f2f665f341565860f3e88b076a", "archive_sha256": "7c599a3d8e44a212ed1748f998a144a102efd888f86401e0cbfe5a7828eae3d2", "handler_sha256": "1494de4f33a078da1fce98356d6fa1af8b23cc679a87cd0215d34a5532db4ea2"}
+  },
+  "php_base": "php@sha256:365b7475fde2424a7c0e053aafd2453d11fb8b60e14f6f83b150e97cf624af89",
+  "database": "mariadb@sha256:d769e37960821dfdcf096954f6e7ac89f747e116c1bba98e48edd265dfc7deae"
+}

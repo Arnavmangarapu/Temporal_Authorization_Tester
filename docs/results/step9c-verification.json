@@ -1,0 +1,52 @@
+{
+  "schema_version": "step9c-verification-1",
+  "checkpoint": "Known Dolibarr #26066 static bug/fix reproduction",
+  "broader_step9_complete": false,
+  "protocol_sha256": "0c0ad09404ccbc55f3e66c6531077035813da977f6ce645aa890156488fa654b",
+  "source_test_template_helper_files": 78,
+  "tests": {"command": "python -m pytest -q", "passed": 385, "seconds": 128.58, "new_static_oracle_provenance_tests": 22, "new_compression_regression_tests": 1},
+  "campaign": {
+    "directory": "artifacts/dolibarr-26066-v1",
+    "expected_runs": 6,
+    "recorded_runs": 6,
+    "completed_runs": 6,
+    "reproduced_pairs": 3,
+    "independent_known_defects": 1,
+    "buggy_disclosed_exact_record": 3,
+    "fixed_denied_without_protected_marker": 3,
+    "buggy_restricted_list_status": 200,
+    "fixed_restricted_list_status": 401,
+    "positive_identity_and_permission_controls_valid": 6,
+    "total_http_requests": 66,
+    "http_requests_per_run": 11,
+    "raw_run_files": 12,
+    "temporal_claim": false,
+    "automatic_discovery_claim": false,
+    "new_vulnerability_claim": false,
+    "blind_held_out": false,
+    "competitor_effectiveness_measured": false,
+    "population_recall": null
+  },
+  "source_pair": {
+    "buggy": "c16313007a90010524cafba67acadcce036b6a9f",
+    "fixed": "62ad3d12d2ee86f2f665f341565860f3e88b076a",
+    "source_version_string": "19.0.0-dev",
+    "sole_changed_upstream_file": "htdocs/multicurrency/class/api_multicurrencies.class.php",
+    "complete_archive_trees_compared": true,
+    "local_authorization_patch": false
+  },
+  "runtime": {
+    "php_version": "8.2.35",
+    "php_base_digest": "sha256:365b7475fde2424a7c0e053aafd2453d11fb8b60e14f6f83b150e97cf624af89",
+    "database_image": "mariadb@sha256:d769e37960821dfdcf096954f6e7ac89f747e116c1bba98e48edd265dfc7deae",
+    "buggy_image_id": "sha256:712af31eb65c7fd7e65f068464c00677326fcb64887dc477e9a94e3231e93160",
+    "fixed_image_id": "sha256:01a9f9e80589b085074fbcac4ea78c28d65117666d984970675484a7590611ff"
+  },
+  "collector_correction": "Discard compressed encoding/length headers after iter_bytes decoding, preventing double decoding of native responses",
+  "development": {"report_directories_retained": 9, "execution_error_inconclusive": 4, "completed_inconclusive": 3, "expected_bug_or_fix": 2, "included_in_frozen_campaign": false, "additional_low_level_diagnostics_used": true},
+  "offline_audit": {"source_and_template_hashes_match": true, "raw_evidence_hashes_match": true, "static_oracles_recomputed": 6, "analysis_exact_match": true},
+  "earlier_step9b_audit": {"source_commit": "e91e4aad3b1c498d81e30231f483c2b92c7cd033", "rows": 36, "passed": true},
+  "cleanup": {"campaign_containers_checked_absent": 12, "campaign_networks_checked_absent": 6, "remaining_owned_development_or_campaign_resources": 0},
+  "export_checks": {"nonempty_credential_fields_in_identity_responses": 0, "jwt_pattern_matches": 0, "bootstrap_credentials_and_databases_exported": false},
+  "open_gates": ["A supported natural temporal defect", "Modern competitor native-oracle effectiveness", "Blind held-out-family evidence", "Independent policy/mutation review", "Novelty and publication claims"]
+}

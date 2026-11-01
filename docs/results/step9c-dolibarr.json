@@ -1,0 +1,51 @@
+{
+  "schema_version": "dolibarr-26066-results-1",
+  "protocol_sha256": "0c0ad09404ccbc55f3e66c6531077035813da977f6ce645aa890156488fa654b",
+  "expected_runs": 6,
+  "recorded_runs": 6,
+  "all_rows_recorded": true,
+  "summaries": [
+    {
+      "variant": "buggy",
+      "recorded": 3,
+      "completed": 3,
+      "expected_outcome": "protected_data_disclosed",
+      "expected_outcome_observed": 3,
+      "median_http_requests": 11,
+      "median_elapsed_seconds": 6.653182355003082
+    },
+    {
+      "variant": "fixed",
+      "recorded": 3,
+      "completed": 3,
+      "expected_outcome": "access_denied",
+      "expected_outcome_observed": 3,
+      "median_http_requests": 11,
+      "median_elapsed_seconds": 6.703455966999172
+    }
+  ],
+  "pairs": [
+    {
+      "pair": 1,
+      "reproduced": true
+    },
+    {
+      "pair": 2,
+      "reproduced": true
+    },
+    {
+      "pair": 3,
+      "reproduced": true
+    }
+  ],
+  "reproduced_pairs": 3,
+  "independent_known_defects": 1,
+  "applications": 1,
+  "source_revisions": 2,
+  "blind_held_out": false,
+  "temporal_claim": false,
+  "automatic_discovery_claim": false,
+  "competitor_effectiveness_measured": false,
+  "population_recall": null,
+  "interpretation": "Repeated clean-instance reproduction of one previously reported static permission defect and its upstream fix; repetitions are not additional defects"
+}

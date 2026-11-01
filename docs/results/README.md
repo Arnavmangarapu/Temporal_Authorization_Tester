@@ -11,6 +11,7 @@ These JSON manifests record local implementation milestones:
 | [step9-verification.json](step9-verification.json) | Regression, offline audit, packaged sample, source checks and target cleanup for Step 9A |
 | [step9b-native-read.json](step9b-native-read.json) and [step9b-verification.json](step9b-verification.json) | Separate 36-invocation shared-input native-read pilot, trace coverage and verification; native fault labels/defect recall remain unevaluated |
 | [step9b-screening.json](step9b-screening.json) | Thirteen independently sourced entries triaged; no external defective/fixed pair executed |
+| [step9c-dolibarr.json](step9c-dolibarr.json) and [step9c-verification.json](step9c-verification.json) | Subsequent six-run reproduction of one known static Dolibarr bug and its upstream fix; three pairs are repetitions, not additional defects |
 
 They are historical summaries, not raw datasets or final effectiveness results. Seeded lab defects, existing-application non-findings and native-tool diagnostics have different meanings and remain separate in the guides. No confirmed natural revocation bypass or comparative improvement is established by these milestones.
 
@@ -25,3 +26,5 @@ Current implementation scope and milestone test counts are tracked in [implement
 The Step 9A summary and CSV correspond to [artifact-v1.json](../../benchmarks/artifact-v1.json). Raw rows and their file indexes are retained in the local artifacts/evaluation-v1 directory and an audit bundle. CSV evidence paths are relative to that campaign directory, not files distributed beside this CSV. Read [the results discussion](../evaluation-results.md) before interpreting its counts.
 
 The Step 9B aggregate corresponds to [native-read-v1.json](../../benchmarks/native-read-v1.json) and the separate local artifacts/native-read-v1 campaign. Its raw evidence and source snapshot are packaged separately from the immutable Step 9A bundle. Later executable changes must not be applied retrospectively to either freeze. Read the [native-read guide](../native-read-comparison.md) for run, stop, resume and offline-audit instructions.
+
+Step 9C corresponds to [dolibarr-26066-v1.json](../../benchmarks/dolibarr-26066-v1.json) and the separate artifacts/dolibarr-26066-v1 campaign. Its source/templates, raw requests, recalculated static oracles and analysis have their own audit bundle. Historical screening and earlier campaign manifests remain unchanged. See the [Dolibarr guide](../dolibarr-reproduction.md) for setup, run/stop, measurement scope and offline review.
