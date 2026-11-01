@@ -1,0 +1,50 @@
+{
+  "scope": "Step 9A artifact checkpoint; broader publication gates remain open",
+  "protocol_sha256": "a97cfbaf9e2d3ea1942e392a9cff9fdc9f735a79bd9a5248519d272164fcf0fa",
+  "canonical_rows": 1039,
+  "all_rows_recorded": true,
+  "harness_errors": [],
+  "regression": {
+    "passed": 348,
+    "seconds": 129.84,
+    "evaluation_tests": 20
+  },
+  "offline_audit": {
+    "passed": true,
+    "source_and_evidence_hashes_verified": true,
+    "regenerated_analysis_and_csv_match": true,
+    "target_executed": false
+  },
+  "package": {
+    "wheel_sha256": "ee78c3bbdbf405bed202512c2cb5d3d73fbc24096b46b24370a01d645cc874c3",
+    "all_modules_and_assets_match_source": true,
+    "outside_checkout_sample": {
+      "scope": "Outside-checkout packaged real-HTTP sample; excluded from the canonical 1039 rows",
+      "module": "/tmp/temporal-auth-step9-wheel/temporal_auth/web/execution.py",
+      "result": {
+        "verdict": "confirmed_violation",
+        "confirmation": "confirmed",
+        "reproductions": 2,
+        "requests": 54,
+        "fixture_requests": 12,
+        "kind": "stale_session_access",
+        "engine_status": "completed",
+        "error": null
+      },
+      "target_stopped": true,
+      "raw_evidence": "/tmp/temporal-auth-step9-release-smoke-d1a77f7f62d74785a8e426a46756fbd7"
+    }
+  },
+  "cleanup": {
+    "tcp_fixtures_stopped": 36,
+    "tcp_fixture_count": 36,
+    "native_restler_containers_remaining": [],
+    "controller_completed": true,
+    "scope": "Managed TCP fixture cleanup flags and project-named Docker container check; unrelated services left running."
+  },
+  "aggregate_sha256": {
+    "benchmarks/artifact-v1.json": "1b3940039b454c450a0dac70af87c1690ee3c8f0c9e878590cf090596488d7f3",
+    "docs/results/step9-artifact.json": "ba5da33e717cadc843b7b24fa76a25ccaa49064e1db8980015f6819b86ab08ac",
+    "docs/results/step9-runs.csv": "abd58ab8146501c88d3a60f53a1ab3e14c9d3791c59a2a1ffde78e0c6cde21ce"
+  }
+}

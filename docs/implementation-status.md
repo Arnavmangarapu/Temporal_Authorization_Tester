@@ -12,7 +12,7 @@ Step 1 corresponds to the policy/comparison foundation (Stage 0 in the detailed 
 | 6. Existing-application adapters and baseline execution | Complete for native protected-read pilots | Two pinned codebases, 12 local-profile runs, real EvoMaster and RESTler compatibility checks; final matched effectiveness evaluation remains Step 9 |
 | 7. Web interface | Complete for the local single-worker workspace | Guided/configured labs, native pilots, durable SQLite jobs, progress, cancellation, findings/evidence and executable replay downloads |
 | 8. Prometheus and Grafana | Complete for the optional local worker stack | Bounded metrics, evidence reconciliation, restart recovery, deduplicated finding signatures and provisioned dashboard; see the monitoring guide |
-| 9. Frozen evaluation and release | Not started | No detection or improvement results claimed |
+| 9. Frozen evaluation and release | In progress: frozen artifact campaign implemented; broader research gates remain open | Protocol/source fingerprints, serial resumable runs, matched scheduling ablations, diagnostics and separate native-tool applicability; no held-out or superiority claim |
 
 **Step 1 verification**
 
@@ -42,7 +42,7 @@ Offline analyze creates analysis.json without editing observations and cannot co
 
 **Current research boundary**
 
-Steps 1–8 are implemented and verified within the documented local scope. Step 9, the frozen comparative evaluation and release, remains pending. Historical verification summaries below describe each milestone; generated local artifacts are not distributed in this repository. See [results provenance](results/README.md).
+Steps 1–8 are implemented and verified within the documented local scope. Step 9 now has a frozen artifact-evaluation harness; the broader held-out comparative study and publication-readiness gates remain open. Historical verification summaries below describe each milestone; generated local artifacts are not distributed in this repository. See [results provenance](results/README.md).
 
 **Step 5 verification**
 
@@ -79,3 +79,12 @@ The real Prometheus/Grafana stack was built from digest-pinned upstream images. 
 Six monitored jobs produced exactly **198 stored HTTP events**, 12 completed sequences and two distinct confirmed seeded finding signatures. Two independent read-confirmation jobs deduplicated into one signature; the other signature was a confirmed write effect. Exported event counts, histogram count/sum, terminal-job totals and fixture totals matched stored records. The worker also reconstructed the same final totals after restart. Three unmonitored jobs completed correctly. A three-pair alternating wall-time pilot measured medians of 5.760 seconds disabled and 5.866 seconds monitored (approximately +1.84%); the small sample, policy waits, startup and polling prevent a general overhead or significance claim.
 
 The final wheel contains the matching monitoring/worker/CLI modules and optional dependency metadata. From outside the checkout, the extracted wheel started its worker, completed a managed-lab non-finding and served metrics over HTTP. See [the monitoring guide](monitoring.md) and [verification manifest](results/step8-monitoring.json). This milestone adds operational visibility; final matched effectiveness evaluation and release remain Step 9.
+
+
+**Step 9: artifact-evaluation checkpoint**
+
+The [frozen protocol](../benchmarks/artifact-v1.json) fixes 29 known configurations, seeds, methods, budgets, disabled monitoring and 66 source fingerprints before canonical execution. The [evaluation guide](evaluation.md) distinguishes six tracks and all 1,039 required rows. A full regression before the freeze passed **348 tests in 129.84 seconds**; the 20 added evaluation checks cover ground truth, causal scheduling, partial coverage, evidence/row integrity, resume behavior and correlated analysis units. This is a reproducible artifact study, not held-out defect-family evidence or cleared novelty.
+
+All 1,039 rows completed with no harness errors and verified evidence indexes. The three scheduling ablations agreed in all 290 logical and 12 real-HTTP matched triples. Every method detected the ten planted-defect configurations (two root-cause families), with no alarm on sixteen correct configurations and correct inconclusive outcomes on three controls. All 60 native application profiles produced non-findings; four actual modern-tool compatibility invocations completed without establishing a matched effectiveness ranking. Nine minimization searches completed, and all 60 early diagnostics were rejected as pre-deadline evidence by the production oracle. See [results and limitations](evaluation-results.md), [analysis JSON](results/step9-artifact.json) and [run CSV](results/step9-runs.csv).
+
+This is Step 9A, an artifact checkpoint. The broader Step 9 study remains incomplete: no held-out defect-family generalization, independent mutation review, matched native-tool effectiveness result or cleared novelty claim is asserted. More elaborate scheduling showed no detection benefit on this corpus. Preserve this negative result when designing the next research stage.

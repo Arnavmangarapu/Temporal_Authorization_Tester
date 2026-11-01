@@ -1,0 +1,4 @@
+* text=auto eol=lf
+*.ttf -text
+# CSV is generated with standard CRLF records; preserve its verified bytes.
+*.csv -text whitespace=cr-at-eol

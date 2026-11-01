@@ -43,3 +43,15 @@ Store inconclusive outcomes and execution failures rather than folding them into
 **Decision after the pilot**
 
 Proceed to broader experiments if the tool distinguishes a stale permission defect from legitimate delayed revocation and there is a measurable capability or efficiency question beyond existing approaches. If current competitors already handle the same semantics equally well, narrow the contribution to demonstrated oracle accuracy, scheduling cost or a reproducible benchmark. Do not invent an improvement percentage or describe a synthetic lab defect as a newly discovered vulnerability.
+
+**Additional literature check for Step 9, 1 November 2026**
+
+Broader authorization-lifecycle testing has substantial prior work. [Testing of PolPA-based Usage Control Systems](https://openportal.isti.cnr.it/data/2014/309851/2014_309851.preprint.pdf) implements test generation/execution for history-sensitive and continuous authorization enforcement at the policy-decision-point level. It prevents claiming that testing changing authorization is itself new; its language and execution layer differ from this annotated HTTP artifact.
+
+[GraphQLer, revised August 2026](https://arxiv.org/abs/2504.13358v2), describes dependency-aware GraphQL security sequences, cross-user access checks and create/delete/read chains. It is relevant architectural overlap, although this project currently targets annotated REST/lab contracts. [When Does Authorization End?](https://arxiv.org/abs/2609.02866v1) studies policy-relative effect closure and in-flight work after revocation; our probes begun after a declared deadline do not prove closure of earlier in-flight operations.
+
+[Defects4REST](https://mmotwani.com/publications/publication_sources/Mehta26icse.pdf) provides a real-defect corpus that could support later external evaluation. Dataset membership does not establish a supported permission-transition workflow or known propagation policy; candidate inclusion needs individual screening and reproduction.
+
+The EvoMaster access-policy paper now also lists a [Journal of Systems and Software DOI](https://doi.org/10.1016/j.jss.2026.113060). Its integrated security oracles remain a substantive comparator, not merely a crash detector. The pinned RESTler checker documentation explicitly includes unauthorized-user resource access and post-deletion checks. This source review still does not certify a new contribution or an absence of lifecycle support in those implementations.
+
+The [artifact evaluation](evaluation.md) therefore separates matched scheduling ablations and local native-read profiles from unequal native-tool compatibility checks. The known controlled fixtures are not held-out data. The artifact can be reproducible while the broader publication-readiness gate remains open.

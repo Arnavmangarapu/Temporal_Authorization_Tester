@@ -2,11 +2,19 @@
 
 A research project for testing authorization after permissions change. The first scenario is document-sharing revocation: preserve a recipient's session, revoke sharing, and check whether protected content remains accessible beyond the application's declared propagation bound.
 
-**Current implementation: Steps 1–8 — core testing, native pilots, local web interface and optional monitoring.**
+**Current implementation: Steps 1–8 complete; Step 9A artifact evaluation complete, broader research gates open.**
 
 Implemented: validated configuration, the controlled lab, seeded dependency-aware generation, bounded HTTP collection, read/write verification, clean confirmation and bounded minimization. A local website supports configuration, persistent jobs, live evidence, cancellation and replay downloads. Version two supports sharing, role and ownership changes with read/write probes. Native Gitea/PocketBase adapters and real EvoMaster/RESTler compatibility runs are available. Optional Prometheus/Grafana monitoring now follows worker evidence. Final comparative evaluation remains future work; no comparative improvement or natural revocation bypass is claimed.
 
 See the [generation/minimization guide](docs/generation-minimization.md), [oracle/replay instructions](docs/oracle-replay.md), [runner instructions](docs/runner.md), [lab instructions](docs/document-lab.md), [implementation plan](p4_implementation_plan.md), [policy contract](docs/policy-contract.md), [comparison specification](docs/research-comparisons.md) and [step status](docs/implementation-status.md).
+
+**Base paper and research scope**
+
+Shilpa R. G., Pushphavathi T. P. and Murthy P. V. R. (2024), *Design and Development of an Automatic Penetration Test Generation Methodology for Security of Web Applications*, Journal of Computer Science 20(10), 1176–1184. [DOI](https://doi.org/10.3844/jcssp.2024.1176.1184) · [Original PDF](https://thescipub.com/pdf/jcssp.2024.1176.1184.pdf).
+
+The paper already derives functional sequences from models; its illustrated method inserts one penetration-test event per scenario. This project investigates annotated permission changes, justified timing bounds, retained/fresh sessions, protected-effect checks and clean replay. It is a research extension, not an exact reproduction of unavailable original code. Stateful testing alone is not a novelty claim. See [research comparisons](docs/research-comparisons.md) and the [frozen artifact-evaluation guide](docs/evaluation.md) for what is measured and what remains unproven.
+
+The first frozen artifact campaign recorded **1,039 checks across six tracks**. All scheduling ablations detected the same planted defects; no scheduling advantage was demonstrated. These known configurations represent only two root-cause families, and existing-application profiles yielded no observed bypass. See the [results and limitations](docs/evaluation-results.md). Held-out generalization, matched modern-tool effectiveness and publication novelty remain open.
 
 **Run and stop on Linux**
 
@@ -178,7 +186,7 @@ To run automated tests, open another Linux/WSL terminal in the project root and 
 python -m pytest -q
 ```
 
-The last verified Linux result was **328 passed in about two minutes**. Focused checks are:
+The latest Linux regression passed **348 tests in about two minutes**, including 20 evaluation-harness tests. Focused checks are:
 
 ```bash
 python -m pytest -q tests/test_web.py
@@ -262,7 +270,7 @@ Start the interface with `temporal-auth serve`, or `PYTHONPATH=src python -m tem
 
 For optional monitoring, launch `temporal-auth serve --metrics-port 9464`, then `docker compose --profile monitoring up -d --build`. Open [Grafana](http://127.0.0.1:3000/d/temporal-auth-worker). See the [monitoring guide](docs/monitoring.md) for metrics, local setup, coverage and stopping services.
 
-Steps 1–8 are implemented. Step 9, frozen comparative evaluation and release, remains pending; this repository does not establish superiority over the base paper or modern testing tools.
+Steps 1–8 are implemented. Step 9 now includes a frozen artifact-evaluation harness; the broader held-out study and publication-readiness gates remain open. This repository does not establish superiority over the base paper or modern testing tools. See the [evaluation guide](docs/evaluation.md).
 
 
 **Repository contents and experiment artifacts**

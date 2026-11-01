@@ -1,0 +1,2747 @@
+{
+  "scope": "Known-fixture artifact evaluation, not held-out effectiveness or a cleared novelty claim",
+  "protocol_sha256": "a97cfbaf9e2d3ea1942e392a9cff9fdc9f735a79bd9a5248519d272164fcf0fa",
+  "corpus_status": "These modes were used in development. New seeds hold out action orders only, not applications or defect families.",
+  "analysis_units": {
+    "cases": "Finite corpus configurations; repeated seeds are not new defects",
+    "root_causes": [
+      "stale_snapshot",
+      "commit_before_denial"
+    ],
+    "existing_apps": "Two codebases, unknown natural defect denominator; no recall estimate",
+    "uncertainty": "Report exact finite-corpus counts and per-seed outcomes; no population confidence interval from correlated fixtures"
+  },
+  "coverage": {
+    "logical": {
+      "required": 870,
+      "recorded": 870
+    },
+    "early": {
+      "required": 60,
+      "recorded": 60
+    },
+    "tcp": {
+      "required": 36,
+      "recorded": 36
+    },
+    "minimize": {
+      "required": 9,
+      "recorded": 9
+    },
+    "external": {
+      "required": 60,
+      "recorded": 60
+    },
+    "native": {
+      "required": 4,
+      "recorded": 4
+    }
+  },
+  "controlled": {
+    "seeded-dag": {
+      "runs": 290,
+      "case_configurations": 29,
+      "statuses": {
+        "setup_failed": 10,
+        "completed": 270,
+        "execution_error": 10
+      },
+      "verdicts": {
+        "inconclusive": 30,
+        "no_violation_observed": 160,
+        "confirmed_violation": 100
+      },
+      "defect_configurations": {
+        "denominator": 10,
+        "detected_any_seed": 10,
+        "detected_every_seed": 10
+      },
+      "root_cause_families_detected": [
+        "commit_before_denial",
+        "stale_snapshot"
+      ],
+      "correct_configurations": {
+        "denominator": 16,
+        "with_any_alarm": 0,
+        "with_any_confirmed_alarm": 0
+      },
+      "expected_inconclusive_configurations": {
+        "denominator": 3,
+        "correct_every_seed": 3
+      },
+      "sequences": {
+        "collected": 470,
+        "completed": 470,
+        "oracle_valid": 460
+      },
+      "replay": {
+        "attempted": 200,
+        "matching_reproductions": 200
+      },
+      "requests_by_truth": {
+        "correct": {
+          "n": 160,
+          "median": 15.0,
+          "min": 15,
+          "max": 21
+        },
+        "violation": {
+          "n": 100,
+          "median": 63.0,
+          "min": 45,
+          "max": 63
+        },
+        "inconclusive": {
+          "n": 30,
+          "median": 1.0,
+          "min": 0,
+          "max": 15
+        }
+      },
+      "wall_seconds": {
+        "n": 290,
+        "median": 0.2347600479988614,
+        "min": 0.0870420049977838,
+        "max": 0.7615774350015272
+      },
+      "per_case": [
+        {
+          "case": "ownership-read-delayed",
+          "truth": "correct",
+          "root_cause": null,
+          "repeats": 10,
+          "expected_verdict": "no_violation_observed",
+          "verdicts": {
+            "no_violation_observed": 10
+          },
+          "correctly_classified": 10,
+          "confirmed_any": false,
+          "confirmed_every": false,
+          "alarm_any": false,
+          "requests": {
+            "n": 10,
+            "median": 15.0,
+            "min": 15,
+            "max": 15
+          }
+        },
+        {
+          "case": "ownership-read-immediate",
+          "truth": "correct",
+          "root_cause": null,
+          "repeats": 10,
+          "expected_verdict": "no_violation_observed",
+          "verdicts": {
+            "no_violation_observed": 10
+          },
+          "correctly_classified": 10,
+          "confirmed_any": false,
+          "confirmed_every": false,
+          "alarm_any": false,
+          "requests": {
+            "n": 10,
+            "median": 15.0,
+            "min": 15,
+            "max": 15
+          }
+        },
+        {
+          "case": "ownership-read-stale_session",
+          "truth": "violation",
+          "root_cause": "stale_snapshot",
+          "repeats": 10,
+          "expected_verdict": "confirmed_violation",
+          "verdicts": {
+            "confirmed_violation": 10
+          },
+          "correctly_classified": 10,
+          "confirmed_any": true,
+          "confirmed_every": true,
+          "alarm_any": true,
+          "requests": {
+            "n": 10,
+            "median": 45.0,
+            "min": 45,
+            "max": 45
+          }
+        },
+        {
+          "case": "ownership-read-write_side_effect",
+          "truth": "correct",
+          "root_cause": null,
+          "repeats": 10,
+          "expected_verdict": "no_violation_observed",
+          "verdicts": {
+            "no_violation_observed": 10
+          },
+          "correctly_classified": 10,
+          "confirmed_any": false,
+          "confirmed_every": false,
+          "alarm_any": false,
+          "requests": {
+            "n": 10,
+            "median": 15.0,
+            "min": 15,
+            "max": 15
+          }
+        },
+        {
+          "case": "ownership-write-delayed",
+          "truth": "correct",
+          "root_cause": null,
+          "repeats": 10,
+          "expected_verdict": "no_violation_observed",
+          "verdicts": {
+            "no_violation_observed": 10
+          },
+          "correctly_classified": 10,
+          "confirmed_any": false,
+          "confirmed_every": false,
+          "alarm_any": false,
+          "requests": {
+            "n": 10,
+            "median": 21.0,
+            "min": 21,
+            "max": 21
+          }
+        },
+        {
+          "case": "ownership-write-immediate",
+          "truth": "correct",
+          "root_cause": null,
+          "repeats": 10,
+          "expected_verdict": "no_violation_observed",
+          "verdicts": {
+            "no_violation_observed": 10
+          },
+          "correctly_classified": 10,
+          "confirmed_any": false,
+          "confirmed_every": false,
+          "alarm_any": false,
+          "requests": {
+            "n": 10,
+            "median": 21.0,
+            "min": 21,
+            "max": 21
+          }
+        },
+        {
+          "case": "ownership-write-stale_session",
+          "truth": "violation",
+          "root_cause": "stale_snapshot",
+          "repeats": 10,
+          "expected_verdict": "confirmed_violation",
+          "verdicts": {
+            "confirmed_violation": 10
+          },
+          "correctly_classified": 10,
+          "confirmed_any": true,
+          "confirmed_every": true,
+          "alarm_any": true,
+          "requests": {
+            "n": 10,
+            "median": 63.0,
+            "min": 63,
+            "max": 63
+          }
+        },
+        {
+          "case": "ownership-write-write_side_effect",
+          "truth": "violation",
+          "root_cause": "commit_before_denial",
+          "repeats": 10,
+          "expected_verdict": "confirmed_violation",
+          "verdicts": {
+            "confirmed_violation": 10
+          },
+          "correctly_classified": 10,
+          "confirmed_any": true,
+          "confirmed_every": true,
+          "alarm_any": true,
+          "requests": {
+            "n": 10,
+            "median": 63.0,
+            "min": 63,
+            "max": 63
+          }
+        },
+        {
+          "case": "role-read-delayed",
+          "truth": "correct",
+          "root_cause": null,
+          "repeats": 10,
+          "expected_verdict": "no_violation_observed",
+          "verdicts": {
+            "no_violation_observed": 10
+          },
+          "correctly_classified": 10,
+          "confirmed_any": false,
+          "confirmed_every": false,
+          "alarm_any": false,
+          "requests": {
+            "n": 10,
+            "median": 15.0,
+            "min": 15,
+            "max": 15
+          }
+        },
+        {
+          "case": "role-read-immediate",
+          "truth": "correct",
+          "root_cause": null,
+          "repeats": 10,
+          "expected_verdict": "no_violation_observed",
+          "verdicts": {
+            "no_violation_observed": 10
+          },
+          "correctly_classified": 10,
+          "confirmed_any": false,
+          "confirmed_every": false,
+          "alarm_any": false,
+          "requests": {
+            "n": 10,
+            "median": 15.0,
+            "min": 15,
+            "max": 15
+          }
+        },
+        {
+          "case": "role-read-stale_session",
+          "truth": "violation",
+          "root_cause": "stale_snapshot",
+          "repeats": 10,
+          "expected_verdict": "confirmed_violation",
+          "verdicts": {
+            "confirmed_violation": 10
+          },
+          "correctly_classified": 10,
+          "confirmed_any": true,
+          "confirmed_every": true,
+          "alarm_any": true,
+          "requests": {
+            "n": 10,
+            "median": 45.0,
+            "min": 45,
+            "max": 45
+          }
+        },
+        {
+          "case": "role-read-write_side_effect",
+          "truth": "correct",
+          "root_cause": null,
+          "repeats": 10,
+          "expected_verdict": "no_violation_observed",
+          "verdicts": {
+            "no_violation_observed": 10
+          },
+          "correctly_classified": 10,
+          "confirmed_any": false,
+          "confirmed_every": false,
+          "alarm_any": false,
+          "requests": {
+            "n": 10,
+            "median": 15.0,
+            "min": 15,
+            "max": 15
+          }
+        },
+        {
+          "case": "role-write-delayed",
+          "truth": "correct",
+          "root_cause": null,
+          "repeats": 10,
+          "expected_verdict": "no_violation_observed",
+          "verdicts": {
+            "no_violation_observed": 10
+          },
+          "correctly_classified": 10,
+          "confirmed_any": false,
+          "confirmed_every": false,
+          "alarm_any": false,
+          "requests": {
+            "n": 10,
+            "median": 21.0,
+            "min": 21,
+            "max": 21
+          }
+        },
+        {
+          "case": "role-write-immediate",
+          "truth": "correct",
+          "root_cause": null,
+          "repeats": 10,
+          "expected_verdict": "no_violation_observed",
+          "verdicts": {
+            "no_violation_observed": 10
+          },
+          "correctly_classified": 10,
+          "confirmed_any": false,
+          "confirmed_every": false,
+          "alarm_any": false,
+          "requests": {
+            "n": 10,
+            "median": 21.0,
+            "min": 21,
+            "max": 21
+          }
+        },
+        {
+          "case": "role-write-stale_session",
+          "truth": "violation",
+          "root_cause": "stale_snapshot",
+          "repeats": 10,
+          "expected_verdict": "confirmed_violation",
+          "verdicts": {
+            "confirmed_violation": 10
+          },
+          "correctly_classified": 10,
+          "confirmed_any": true,
+          "confirmed_every": true,
+          "alarm_any": true,
+          "requests": {
+            "n": 10,
+            "median": 63.0,
+            "min": 63,
+            "max": 63
+          }
+        },
+        {
+          "case": "role-write-write_side_effect",
+          "truth": "violation",
+          "root_cause": "commit_before_denial",
+          "repeats": 10,
+          "expected_verdict": "confirmed_violation",
+          "verdicts": {
+            "confirmed_violation": 10
+          },
+          "correctly_classified": 10,
+          "confirmed_any": true,
+          "confirmed_every": true,
+          "alarm_any": true,
+          "requests": {
+            "n": 10,
+            "median": 63.0,
+            "min": 63,
+            "max": 63
+          }
+        },
+        {
+          "case": "sharing-read-control_failure",
+          "truth": "inconclusive",
+          "root_cause": null,
+          "repeats": 10,
+          "expected_verdict": "inconclusive",
+          "verdicts": {
+            "inconclusive": 10
+          },
+          "correctly_classified": 10,
+          "confirmed_any": false,
+          "confirmed_every": false,
+          "alarm_any": false,
+          "requests": {
+            "n": 10,
+            "median": 15.0,
+            "min": 15,
+            "max": 15
+          }
+        },
+        {
+          "case": "sharing-read-delayed",
+          "truth": "correct",
+          "root_cause": null,
+          "repeats": 10,
+          "expected_verdict": "no_violation_observed",
+          "verdicts": {
+            "no_violation_observed": 10
+          },
+          "correctly_classified": 10,
+          "confirmed_any": false,
+          "confirmed_every": false,
+          "alarm_any": false,
+          "requests": {
+            "n": 10,
+            "median": 15.0,
+            "min": 15,
+            "max": 15
+          }
+        },
+        {
+          "case": "sharing-read-disclosure_403",
+          "truth": "violation",
+          "root_cause": "stale_snapshot",
+          "repeats": 10,
+          "expected_verdict": "confirmed_violation",
+          "verdicts": {
+            "confirmed_violation": 10
+          },
+          "correctly_classified": 10,
+          "confirmed_any": true,
+          "confirmed_every": true,
+          "alarm_any": true,
+          "requests": {
+            "n": 10,
+            "median": 45.0,
+            "min": 45,
+            "max": 45
+          }
+        },
+        {
+          "case": "sharing-read-immediate",
+          "truth": "correct",
+          "root_cause": null,
+          "repeats": 10,
+          "expected_verdict": "no_violation_observed",
+          "verdicts": {
+            "no_violation_observed": 10
+          },
+          "correctly_classified": 10,
+          "confirmed_any": false,
+          "confirmed_every": false,
+          "alarm_any": false,
+          "requests": {
+            "n": 10,
+            "median": 15.0,
+            "min": 15,
+            "max": 15
+          }
+        },
+        {
+          "case": "sharing-read-public_metadata_200",
+          "truth": "correct",
+          "root_cause": null,
+          "repeats": 10,
+          "expected_verdict": "no_violation_observed",
+          "verdicts": {
+            "no_violation_observed": 10
+          },
+          "correctly_classified": 10,
+          "confirmed_any": false,
+          "confirmed_every": false,
+          "alarm_any": false,
+          "requests": {
+            "n": 10,
+            "median": 15.0,
+            "min": 15,
+            "max": 15
+          }
+        },
+        {
+          "case": "sharing-read-stale_session",
+          "truth": "violation",
+          "root_cause": "stale_snapshot",
+          "repeats": 10,
+          "expected_verdict": "confirmed_violation",
+          "verdicts": {
+            "confirmed_violation": 10
+          },
+          "correctly_classified": 10,
+          "confirmed_any": true,
+          "confirmed_every": true,
+          "alarm_any": true,
+          "requests": {
+            "n": 10,
+            "median": 45.0,
+            "min": 45,
+            "max": 45
+          }
+        },
+        {
+          "case": "sharing-read-unavailable",
+          "truth": "inconclusive",
+          "root_cause": null,
+          "repeats": 10,
+          "expected_verdict": "inconclusive",
+          "verdicts": {
+            "inconclusive": 10
+          },
+          "correctly_classified": 10,
+          "confirmed_any": false,
+          "confirmed_every": false,
+          "alarm_any": false,
+          "requests": {
+            "n": 10,
+            "median": 1.0,
+            "min": 1,
+            "max": 1
+          }
+        },
+        {
+          "case": "sharing-read-unknown_policy",
+          "truth": "inconclusive",
+          "root_cause": null,
+          "repeats": 10,
+          "expected_verdict": "inconclusive",
+          "verdicts": {
+            "inconclusive": 10
+          },
+          "correctly_classified": 10,
+          "confirmed_any": false,
+          "confirmed_every": false,
+          "alarm_any": false,
+          "requests": {
+            "n": 10,
+            "median": 0.0,
+            "min": 0,
+            "max": 0
+          }
+        },
+        {
+          "case": "sharing-read-write_side_effect",
+          "truth": "correct",
+          "root_cause": null,
+          "repeats": 10,
+          "expected_verdict": "no_violation_observed",
+          "verdicts": {
+            "no_violation_observed": 10
+          },
+          "correctly_classified": 10,
+          "confirmed_any": false,
+          "confirmed_every": false,
+          "alarm_any": false,
+          "requests": {
+            "n": 10,
+            "median": 15.0,
+            "min": 15,
+            "max": 15
+          }
+        },
+        {
+          "case": "sharing-write-delayed",
+          "truth": "correct",
+          "root_cause": null,
+          "repeats": 10,
+          "expected_verdict": "no_violation_observed",
+          "verdicts": {
+            "no_violation_observed": 10
+          },
+          "correctly_classified": 10,
+          "confirmed_any": false,
+          "confirmed_every": false,
+          "alarm_any": false,
+          "requests": {
+            "n": 10,
+            "median": 21.0,
+            "min": 21,
+            "max": 21
+          }
+        },
+        {
+          "case": "sharing-write-immediate",
+          "truth": "correct",
+          "root_cause": null,
+          "repeats": 10,
+          "expected_verdict": "no_violation_observed",
+          "verdicts": {
+            "no_violation_observed": 10
+          },
+          "correctly_classified": 10,
+          "confirmed_any": false,
+          "confirmed_every": false,
+          "alarm_any": false,
+          "requests": {
+            "n": 10,
+            "median": 21.0,
+            "min": 21,
+            "max": 21
+          }
+        },
+        {
+          "case": "sharing-write-stale_session",
+          "truth": "violation",
+          "root_cause": "stale_snapshot",
+          "repeats": 10,
+          "expected_verdict": "confirmed_violation",
+          "verdicts": {
+            "confirmed_violation": 10
+          },
+          "correctly_classified": 10,
+          "confirmed_any": true,
+          "confirmed_every": true,
+          "alarm_any": true,
+          "requests": {
+            "n": 10,
+            "median": 63.0,
+            "min": 63,
+            "max": 63
+          }
+        },
+        {
+          "case": "sharing-write-write_side_effect",
+          "truth": "violation",
+          "root_cause": "commit_before_denial",
+          "repeats": 10,
+          "expected_verdict": "confirmed_violation",
+          "verdicts": {
+            "confirmed_violation": 10
+          },
+          "correctly_classified": 10,
+          "confirmed_any": true,
+          "confirmed_every": true,
+          "alarm_any": true,
+          "requests": {
+            "n": 10,
+            "median": 63.0,
+            "min": 63,
+            "max": 63
+          }
+        }
+      ]
+    },
+    "canonical-dag": {
+      "runs": 290,
+      "case_configurations": 29,
+      "statuses": {
+        "completed": 270,
+        "execution_error": 10,
+        "setup_failed": 10
+      },
+      "verdicts": {
+        "no_violation_observed": 160,
+        "confirmed_violation": 100,
+        "inconclusive": 30
+      },
+      "defect_configurations": {
+        "denominator": 10,
+        "detected_any_seed": 10,
+        "detected_every_seed": 10
+      },
+      "root_cause_families_detected": [
+        "commit_before_denial",
+        "stale_snapshot"
+      ],
+      "correct_configurations": {
+        "denominator": 16,
+        "with_any_alarm": 0,
+        "with_any_confirmed_alarm": 0
+      },
+      "expected_inconclusive_configurations": {
+        "denominator": 3,
+        "correct_every_seed": 3
+      },
+      "sequences": {
+        "collected": 470,
+        "completed": 470,
+        "oracle_valid": 460
+      },
+      "replay": {
+        "attempted": 200,
+        "matching_reproductions": 200
+      },
+      "requests_by_truth": {
+        "correct": {
+          "n": 160,
+          "median": 15.0,
+          "min": 15,
+          "max": 21
+        },
+        "violation": {
+          "n": 100,
+          "median": 63.0,
+          "min": 45,
+          "max": 63
+        },
+        "inconclusive": {
+          "n": 30,
+          "median": 1.0,
+          "min": 0,
+          "max": 15
+        }
+      },
+      "wall_seconds": {
+        "n": 290,
+        "median": 0.23407590399983746,
+        "min": 0.08574373099691002,
+        "max": 0.7875012110016542
+      },
+      "per_case": [
+        {
+          "case": "ownership-read-delayed",
+          "truth": "correct",
+          "root_cause": null,
+          "repeats": 10,
+          "expected_verdict": "no_violation_observed",
+          "verdicts": {
+            "no_violation_observed": 10
+          },
+          "correctly_classified": 10,
+          "confirmed_any": false,
+          "confirmed_every": false,
+          "alarm_any": false,
+          "requests": {
+            "n": 10,
+            "median": 15.0,
+            "min": 15,
+            "max": 15
+          }
+        },
+        {
+          "case": "ownership-read-immediate",
+          "truth": "correct",
+          "root_cause": null,
+          "repeats": 10,
+          "expected_verdict": "no_violation_observed",
+          "verdicts": {
+            "no_violation_observed": 10
+          },
+          "correctly_classified": 10,
+          "confirmed_any": false,
+          "confirmed_every": false,
+          "alarm_any": false,
+          "requests": {
+            "n": 10,
+            "median": 15.0,
+            "min": 15,
+            "max": 15
+          }
+        },
+        {
+          "case": "ownership-read-stale_session",
+          "truth": "violation",
+          "root_cause": "stale_snapshot",
+          "repeats": 10,
+          "expected_verdict": "confirmed_violation",
+          "verdicts": {
+            "confirmed_violation": 10
+          },
+          "correctly_classified": 10,
+          "confirmed_any": true,
+          "confirmed_every": true,
+          "alarm_any": true,
+          "requests": {
+            "n": 10,
+            "median": 45.0,
+            "min": 45,
+            "max": 45
+          }
+        },
+        {
+          "case": "ownership-read-write_side_effect",
+          "truth": "correct",
+          "root_cause": null,
+          "repeats": 10,
+          "expected_verdict": "no_violation_observed",
+          "verdicts": {
+            "no_violation_observed": 10
+          },
+          "correctly_classified": 10,
+          "confirmed_any": false,
+          "confirmed_every": false,
+          "alarm_any": false,
+          "requests": {
+            "n": 10,
+            "median": 15.0,
+            "min": 15,
+            "max": 15
+          }
+        },
+        {
+          "case": "ownership-write-delayed",
+          "truth": "correct",
+          "root_cause": null,
+          "repeats": 10,
+          "expected_verdict": "no_violation_observed",
+          "verdicts": {
+            "no_violation_observed": 10
+          },
+          "correctly_classified": 10,
+          "confirmed_any": false,
+          "confirmed_every": false,
+          "alarm_any": false,
+          "requests": {
+            "n": 10,
+            "median": 21.0,
+            "min": 21,
+            "max": 21
+          }
+        },
+        {
+          "case": "ownership-write-immediate",
+          "truth": "correct",
+          "root_cause": null,
+          "repeats": 10,
+          "expected_verdict": "no_violation_observed",
+          "verdicts": {
+            "no_violation_observed": 10
+          },
+          "correctly_classified": 10,
+          "confirmed_any": false,
+          "confirmed_every": false,
+          "alarm_any": false,
+          "requests": {
+            "n": 10,
+            "median": 21.0,
+            "min": 21,
+            "max": 21
+          }
+        },
+        {
+          "case": "ownership-write-stale_session",
+          "truth": "violation",
+          "root_cause": "stale_snapshot",
+          "repeats": 10,
+          "expected_verdict": "confirmed_violation",
+          "verdicts": {
+            "confirmed_violation": 10
+          },
+          "correctly_classified": 10,
+          "confirmed_any": true,
+          "confirmed_every": true,
+          "alarm_any": true,
+          "requests": {
+            "n": 10,
+            "median": 63.0,
+            "min": 63,
+            "max": 63
+          }
+        },
+        {
+          "case": "ownership-write-write_side_effect",
+          "truth": "violation",
+          "root_cause": "commit_before_denial",
+          "repeats": 10,
+          "expected_verdict": "confirmed_violation",
+          "verdicts": {
+            "confirmed_violation": 10
+          },
+          "correctly_classified": 10,
+          "confirmed_any": true,
+          "confirmed_every": true,
+          "alarm_any": true,
+          "requests": {
+            "n": 10,
+            "median": 63.0,
+            "min": 63,
+            "max": 63
+          }
+        },
+        {
+          "case": "role-read-delayed",
+          "truth": "correct",
+          "root_cause": null,
+          "repeats": 10,
+          "expected_verdict": "no_violation_observed",
+          "verdicts": {
+            "no_violation_observed": 10
+          },
+          "correctly_classified": 10,
+          "confirmed_any": false,
+          "confirmed_every": false,
+          "alarm_any": false,
+          "requests": {
+            "n": 10,
+            "median": 15.0,
+            "min": 15,
+            "max": 15
+          }
+        },
+        {
+          "case": "role-read-immediate",
+          "truth": "correct",
+          "root_cause": null,
+          "repeats": 10,
+          "expected_verdict": "no_violation_observed",
+          "verdicts": {
+            "no_violation_observed": 10
+          },
+          "correctly_classified": 10,
+          "confirmed_any": false,
+          "confirmed_every": false,
+          "alarm_any": false,
+          "requests": {
+            "n": 10,
+            "median": 15.0,
+            "min": 15,
+            "max": 15
+          }
+        },
+        {
+          "case": "role-read-stale_session",
+          "truth": "violation",
+          "root_cause": "stale_snapshot",
+          "repeats": 10,
+          "expected_verdict": "confirmed_violation",
+          "verdicts": {
+            "confirmed_violation": 10
+          },
+          "correctly_classified": 10,
+          "confirmed_any": true,
+          "confirmed_every": true,
+          "alarm_any": true,
+          "requests": {
+            "n": 10,
+            "median": 45.0,
+            "min": 45,
+            "max": 45
+          }
+        },
+        {
+          "case": "role-read-write_side_effect",
+          "truth": "correct",
+          "root_cause": null,
+          "repeats": 10,
+          "expected_verdict": "no_violation_observed",
+          "verdicts": {
+            "no_violation_observed": 10
+          },
+          "correctly_classified": 10,
+          "confirmed_any": false,
+          "confirmed_every": false,
+          "alarm_any": false,
+          "requests": {
+            "n": 10,
+            "median": 15.0,
+            "min": 15,
+            "max": 15
+          }
+        },
+        {
+          "case": "role-write-delayed",
+          "truth": "correct",
+          "root_cause": null,
+          "repeats": 10,
+          "expected_verdict": "no_violation_observed",
+          "verdicts": {
+            "no_violation_observed": 10
+          },
+          "correctly_classified": 10,
+          "confirmed_any": false,
+          "confirmed_every": false,
+          "alarm_any": false,
+          "requests": {
+            "n": 10,
+            "median": 21.0,
+            "min": 21,
+            "max": 21
+          }
+        },
+        {
+          "case": "role-write-immediate",
+          "truth": "correct",
+          "root_cause": null,
+          "repeats": 10,
+          "expected_verdict": "no_violation_observed",
+          "verdicts": {
+            "no_violation_observed": 10
+          },
+          "correctly_classified": 10,
+          "confirmed_any": false,
+          "confirmed_every": false,
+          "alarm_any": false,
+          "requests": {
+            "n": 10,
+            "median": 21.0,
+            "min": 21,
+            "max": 21
+          }
+        },
+        {
+          "case": "role-write-stale_session",
+          "truth": "violation",
+          "root_cause": "stale_snapshot",
+          "repeats": 10,
+          "expected_verdict": "confirmed_violation",
+          "verdicts": {
+            "confirmed_violation": 10
+          },
+          "correctly_classified": 10,
+          "confirmed_any": true,
+          "confirmed_every": true,
+          "alarm_any": true,
+          "requests": {
+            "n": 10,
+            "median": 63.0,
+            "min": 63,
+            "max": 63
+          }
+        },
+        {
+          "case": "role-write-write_side_effect",
+          "truth": "violation",
+          "root_cause": "commit_before_denial",
+          "repeats": 10,
+          "expected_verdict": "confirmed_violation",
+          "verdicts": {
+            "confirmed_violation": 10
+          },
+          "correctly_classified": 10,
+          "confirmed_any": true,
+          "confirmed_every": true,
+          "alarm_any": true,
+          "requests": {
+            "n": 10,
+            "median": 63.0,
+            "min": 63,
+            "max": 63
+          }
+        },
+        {
+          "case": "sharing-read-control_failure",
+          "truth": "inconclusive",
+          "root_cause": null,
+          "repeats": 10,
+          "expected_verdict": "inconclusive",
+          "verdicts": {
+            "inconclusive": 10
+          },
+          "correctly_classified": 10,
+          "confirmed_any": false,
+          "confirmed_every": false,
+          "alarm_any": false,
+          "requests": {
+            "n": 10,
+            "median": 15.0,
+            "min": 15,
+            "max": 15
+          }
+        },
+        {
+          "case": "sharing-read-delayed",
+          "truth": "correct",
+          "root_cause": null,
+          "repeats": 10,
+          "expected_verdict": "no_violation_observed",
+          "verdicts": {
+            "no_violation_observed": 10
+          },
+          "correctly_classified": 10,
+          "confirmed_any": false,
+          "confirmed_every": false,
+          "alarm_any": false,
+          "requests": {
+            "n": 10,
+            "median": 15.0,
+            "min": 15,
+            "max": 15
+          }
+        },
+        {
+          "case": "sharing-read-disclosure_403",
+          "truth": "violation",
+          "root_cause": "stale_snapshot",
+          "repeats": 10,
+          "expected_verdict": "confirmed_violation",
+          "verdicts": {
+            "confirmed_violation": 10
+          },
+          "correctly_classified": 10,
+          "confirmed_any": true,
+          "confirmed_every": true,
+          "alarm_any": true,
+          "requests": {
+            "n": 10,
+            "median": 45.0,
+            "min": 45,
+            "max": 45
+          }
+        },
+        {
+          "case": "sharing-read-immediate",
+          "truth": "correct",
+          "root_cause": null,
+          "repeats": 10,
+          "expected_verdict": "no_violation_observed",
+          "verdicts": {
+            "no_violation_observed": 10
+          },
+          "correctly_classified": 10,
+          "confirmed_any": false,
+          "confirmed_every": false,
+          "alarm_any": false,
+          "requests": {
+            "n": 10,
+            "median": 15.0,
+            "min": 15,
+            "max": 15
+          }
+        },
+        {
+          "case": "sharing-read-public_metadata_200",
+          "truth": "correct",
+          "root_cause": null,
+          "repeats": 10,
+          "expected_verdict": "no_violation_observed",
+          "verdicts": {
+            "no_violation_observed": 10
+          },
+          "correctly_classified": 10,
+          "confirmed_any": false,
+          "confirmed_every": false,
+          "alarm_any": false,
+          "requests": {
+            "n": 10,
+            "median": 15.0,
+            "min": 15,
+            "max": 15
+          }
+        },
+        {
+          "case": "sharing-read-stale_session",
+          "truth": "violation",
+          "root_cause": "stale_snapshot",
+          "repeats": 10,
+          "expected_verdict": "confirmed_violation",
+          "verdicts": {
+            "confirmed_violation": 10
+          },
+          "correctly_classified": 10,
+          "confirmed_any": true,
+          "confirmed_every": true,
+          "alarm_any": true,
+          "requests": {
+            "n": 10,
+            "median": 45.0,
+            "min": 45,
+            "max": 45
+          }
+        },
+        {
+          "case": "sharing-read-unavailable",
+          "truth": "inconclusive",
+          "root_cause": null,
+          "repeats": 10,
+          "expected_verdict": "inconclusive",
+          "verdicts": {
+            "inconclusive": 10
+          },
+          "correctly_classified": 10,
+          "confirmed_any": false,
+          "confirmed_every": false,
+          "alarm_any": false,
+          "requests": {
+            "n": 10,
+            "median": 1.0,
+            "min": 1,
+            "max": 1
+          }
+        },
+        {
+          "case": "sharing-read-unknown_policy",
+          "truth": "inconclusive",
+          "root_cause": null,
+          "repeats": 10,
+          "expected_verdict": "inconclusive",
+          "verdicts": {
+            "inconclusive": 10
+          },
+          "correctly_classified": 10,
+          "confirmed_any": false,
+          "confirmed_every": false,
+          "alarm_any": false,
+          "requests": {
+            "n": 10,
+            "median": 0.0,
+            "min": 0,
+            "max": 0
+          }
+        },
+        {
+          "case": "sharing-read-write_side_effect",
+          "truth": "correct",
+          "root_cause": null,
+          "repeats": 10,
+          "expected_verdict": "no_violation_observed",
+          "verdicts": {
+            "no_violation_observed": 10
+          },
+          "correctly_classified": 10,
+          "confirmed_any": false,
+          "confirmed_every": false,
+          "alarm_any": false,
+          "requests": {
+            "n": 10,
+            "median": 15.0,
+            "min": 15,
+            "max": 15
+          }
+        },
+        {
+          "case": "sharing-write-delayed",
+          "truth": "correct",
+          "root_cause": null,
+          "repeats": 10,
+          "expected_verdict": "no_violation_observed",
+          "verdicts": {
+            "no_violation_observed": 10
+          },
+          "correctly_classified": 10,
+          "confirmed_any": false,
+          "confirmed_every": false,
+          "alarm_any": false,
+          "requests": {
+            "n": 10,
+            "median": 21.0,
+            "min": 21,
+            "max": 21
+          }
+        },
+        {
+          "case": "sharing-write-immediate",
+          "truth": "correct",
+          "root_cause": null,
+          "repeats": 10,
+          "expected_verdict": "no_violation_observed",
+          "verdicts": {
+            "no_violation_observed": 10
+          },
+          "correctly_classified": 10,
+          "confirmed_any": false,
+          "confirmed_every": false,
+          "alarm_any": false,
+          "requests": {
+            "n": 10,
+            "median": 21.0,
+            "min": 21,
+            "max": 21
+          }
+        },
+        {
+          "case": "sharing-write-stale_session",
+          "truth": "violation",
+          "root_cause": "stale_snapshot",
+          "repeats": 10,
+          "expected_verdict": "confirmed_violation",
+          "verdicts": {
+            "confirmed_violation": 10
+          },
+          "correctly_classified": 10,
+          "confirmed_any": true,
+          "confirmed_every": true,
+          "alarm_any": true,
+          "requests": {
+            "n": 10,
+            "median": 63.0,
+            "min": 63,
+            "max": 63
+          }
+        },
+        {
+          "case": "sharing-write-write_side_effect",
+          "truth": "violation",
+          "root_cause": "commit_before_denial",
+          "repeats": 10,
+          "expected_verdict": "confirmed_violation",
+          "verdicts": {
+            "confirmed_violation": 10
+          },
+          "correctly_classified": 10,
+          "confirmed_any": true,
+          "confirmed_every": true,
+          "alarm_any": true,
+          "requests": {
+            "n": 10,
+            "median": 63.0,
+            "min": 63,
+            "max": 63
+          }
+        }
+      ]
+    },
+    "seeded-minimal": {
+      "runs": 290,
+      "case_configurations": 29,
+      "statuses": {
+        "completed": 270,
+        "execution_error": 10,
+        "setup_failed": 10
+      },
+      "verdicts": {
+        "no_violation_observed": 160,
+        "inconclusive": 30,
+        "confirmed_violation": 100
+      },
+      "defect_configurations": {
+        "denominator": 10,
+        "detected_any_seed": 10,
+        "detected_every_seed": 10
+      },
+      "root_cause_families_detected": [
+        "commit_before_denial",
+        "stale_snapshot"
+      ],
+      "correct_configurations": {
+        "denominator": 16,
+        "with_any_alarm": 0,
+        "with_any_confirmed_alarm": 0
+      },
+      "expected_inconclusive_configurations": {
+        "denominator": 3,
+        "correct_every_seed": 3
+      },
+      "sequences": {
+        "collected": 470,
+        "completed": 470,
+        "oracle_valid": 460
+      },
+      "replay": {
+        "attempted": 200,
+        "matching_reproductions": 200
+      },
+      "requests_by_truth": {
+        "correct": {
+          "n": 160,
+          "median": 13.0,
+          "min": 13,
+          "max": 19
+        },
+        "violation": {
+          "n": 100,
+          "median": 57.0,
+          "min": 39,
+          "max": 57
+        },
+        "inconclusive": {
+          "n": 30,
+          "median": 1.0,
+          "min": 0,
+          "max": 13
+        }
+      },
+      "wall_seconds": {
+        "n": 290,
+        "median": 0.231622535000497,
+        "min": 0.0869474450009875,
+        "max": 0.6764888920006342
+      },
+      "per_case": [
+        {
+          "case": "ownership-read-delayed",
+          "truth": "correct",
+          "root_cause": null,
+          "repeats": 10,
+          "expected_verdict": "no_violation_observed",
+          "verdicts": {
+            "no_violation_observed": 10
+          },
+          "correctly_classified": 10,
+          "confirmed_any": false,
+          "confirmed_every": false,
+          "alarm_any": false,
+          "requests": {
+            "n": 10,
+            "median": 13.0,
+            "min": 13,
+            "max": 13
+          }
+        },
+        {
+          "case": "ownership-read-immediate",
+          "truth": "correct",
+          "root_cause": null,
+          "repeats": 10,
+          "expected_verdict": "no_violation_observed",
+          "verdicts": {
+            "no_violation_observed": 10
+          },
+          "correctly_classified": 10,
+          "confirmed_any": false,
+          "confirmed_every": false,
+          "alarm_any": false,
+          "requests": {
+            "n": 10,
+            "median": 13.0,
+            "min": 13,
+            "max": 13
+          }
+        },
+        {
+          "case": "ownership-read-stale_session",
+          "truth": "violation",
+          "root_cause": "stale_snapshot",
+          "repeats": 10,
+          "expected_verdict": "confirmed_violation",
+          "verdicts": {
+            "confirmed_violation": 10
+          },
+          "correctly_classified": 10,
+          "confirmed_any": true,
+          "confirmed_every": true,
+          "alarm_any": true,
+          "requests": {
+            "n": 10,
+            "median": 39.0,
+            "min": 39,
+            "max": 39
+          }
+        },
+        {
+          "case": "ownership-read-write_side_effect",
+          "truth": "correct",
+          "root_cause": null,
+          "repeats": 10,
+          "expected_verdict": "no_violation_observed",
+          "verdicts": {
+            "no_violation_observed": 10
+          },
+          "correctly_classified": 10,
+          "confirmed_any": false,
+          "confirmed_every": false,
+          "alarm_any": false,
+          "requests": {
+            "n": 10,
+            "median": 13.0,
+            "min": 13,
+            "max": 13
+          }
+        },
+        {
+          "case": "ownership-write-delayed",
+          "truth": "correct",
+          "root_cause": null,
+          "repeats": 10,
+          "expected_verdict": "no_violation_observed",
+          "verdicts": {
+            "no_violation_observed": 10
+          },
+          "correctly_classified": 10,
+          "confirmed_any": false,
+          "confirmed_every": false,
+          "alarm_any": false,
+          "requests": {
+            "n": 10,
+            "median": 19.0,
+            "min": 19,
+            "max": 19
+          }
+        },
+        {
+          "case": "ownership-write-immediate",
+          "truth": "correct",
+          "root_cause": null,
+          "repeats": 10,
+          "expected_verdict": "no_violation_observed",
+          "verdicts": {
+            "no_violation_observed": 10
+          },
+          "correctly_classified": 10,
+          "confirmed_any": false,
+          "confirmed_every": false,
+          "alarm_any": false,
+          "requests": {
+            "n": 10,
+            "median": 19.0,
+            "min": 19,
+            "max": 19
+          }
+        },
+        {
+          "case": "ownership-write-stale_session",
+          "truth": "violation",
+          "root_cause": "stale_snapshot",
+          "repeats": 10,
+          "expected_verdict": "confirmed_violation",
+          "verdicts": {
+            "confirmed_violation": 10
+          },
+          "correctly_classified": 10,
+          "confirmed_any": true,
+          "confirmed_every": true,
+          "alarm_any": true,
+          "requests": {
+            "n": 10,
+            "median": 57.0,
+            "min": 57,
+            "max": 57
+          }
+        },
+        {
+          "case": "ownership-write-write_side_effect",
+          "truth": "violation",
+          "root_cause": "commit_before_denial",
+          "repeats": 10,
+          "expected_verdict": "confirmed_violation",
+          "verdicts": {
+            "confirmed_violation": 10
+          },
+          "correctly_classified": 10,
+          "confirmed_any": true,
+          "confirmed_every": true,
+          "alarm_any": true,
+          "requests": {
+            "n": 10,
+            "median": 57.0,
+            "min": 57,
+            "max": 57
+          }
+        },
+        {
+          "case": "role-read-delayed",
+          "truth": "correct",
+          "root_cause": null,
+          "repeats": 10,
+          "expected_verdict": "no_violation_observed",
+          "verdicts": {
+            "no_violation_observed": 10
+          },
+          "correctly_classified": 10,
+          "confirmed_any": false,
+          "confirmed_every": false,
+          "alarm_any": false,
+          "requests": {
+            "n": 10,
+            "median": 13.0,
+            "min": 13,
+            "max": 13
+          }
+        },
+        {
+          "case": "role-read-immediate",
+          "truth": "correct",
+          "root_cause": null,
+          "repeats": 10,
+          "expected_verdict": "no_violation_observed",
+          "verdicts": {
+            "no_violation_observed": 10
+          },
+          "correctly_classified": 10,
+          "confirmed_any": false,
+          "confirmed_every": false,
+          "alarm_any": false,
+          "requests": {
+            "n": 10,
+            "median": 13.0,
+            "min": 13,
+            "max": 13
+          }
+        },
+        {
+          "case": "role-read-stale_session",
+          "truth": "violation",
+          "root_cause": "stale_snapshot",
+          "repeats": 10,
+          "expected_verdict": "confirmed_violation",
+          "verdicts": {
+            "confirmed_violation": 10
+          },
+          "correctly_classified": 10,
+          "confirmed_any": true,
+          "confirmed_every": true,
+          "alarm_any": true,
+          "requests": {
+            "n": 10,
+            "median": 39.0,
+            "min": 39,
+            "max": 39
+          }
+        },
+        {
+          "case": "role-read-write_side_effect",
+          "truth": "correct",
+          "root_cause": null,
+          "repeats": 10,
+          "expected_verdict": "no_violation_observed",
+          "verdicts": {
+            "no_violation_observed": 10
+          },
+          "correctly_classified": 10,
+          "confirmed_any": false,
+          "confirmed_every": false,
+          "alarm_any": false,
+          "requests": {
+            "n": 10,
+            "median": 13.0,
+            "min": 13,
+            "max": 13
+          }
+        },
+        {
+          "case": "role-write-delayed",
+          "truth": "correct",
+          "root_cause": null,
+          "repeats": 10,
+          "expected_verdict": "no_violation_observed",
+          "verdicts": {
+            "no_violation_observed": 10
+          },
+          "correctly_classified": 10,
+          "confirmed_any": false,
+          "confirmed_every": false,
+          "alarm_any": false,
+          "requests": {
+            "n": 10,
+            "median": 19.0,
+            "min": 19,
+            "max": 19
+          }
+        },
+        {
+          "case": "role-write-immediate",
+          "truth": "correct",
+          "root_cause": null,
+          "repeats": 10,
+          "expected_verdict": "no_violation_observed",
+          "verdicts": {
+            "no_violation_observed": 10
+          },
+          "correctly_classified": 10,
+          "confirmed_any": false,
+          "confirmed_every": false,
+          "alarm_any": false,
+          "requests": {
+            "n": 10,
+            "median": 19.0,
+            "min": 19,
+            "max": 19
+          }
+        },
+        {
+          "case": "role-write-stale_session",
+          "truth": "violation",
+          "root_cause": "stale_snapshot",
+          "repeats": 10,
+          "expected_verdict": "confirmed_violation",
+          "verdicts": {
+            "confirmed_violation": 10
+          },
+          "correctly_classified": 10,
+          "confirmed_any": true,
+          "confirmed_every": true,
+          "alarm_any": true,
+          "requests": {
+            "n": 10,
+            "median": 57.0,
+            "min": 57,
+            "max": 57
+          }
+        },
+        {
+          "case": "role-write-write_side_effect",
+          "truth": "violation",
+          "root_cause": "commit_before_denial",
+          "repeats": 10,
+          "expected_verdict": "confirmed_violation",
+          "verdicts": {
+            "confirmed_violation": 10
+          },
+          "correctly_classified": 10,
+          "confirmed_any": true,
+          "confirmed_every": true,
+          "alarm_any": true,
+          "requests": {
+            "n": 10,
+            "median": 57.0,
+            "min": 57,
+            "max": 57
+          }
+        },
+        {
+          "case": "sharing-read-control_failure",
+          "truth": "inconclusive",
+          "root_cause": null,
+          "repeats": 10,
+          "expected_verdict": "inconclusive",
+          "verdicts": {
+            "inconclusive": 10
+          },
+          "correctly_classified": 10,
+          "confirmed_any": false,
+          "confirmed_every": false,
+          "alarm_any": false,
+          "requests": {
+            "n": 10,
+            "median": 13.0,
+            "min": 13,
+            "max": 13
+          }
+        },
+        {
+          "case": "sharing-read-delayed",
+          "truth": "correct",
+          "root_cause": null,
+          "repeats": 10,
+          "expected_verdict": "no_violation_observed",
+          "verdicts": {
+            "no_violation_observed": 10
+          },
+          "correctly_classified": 10,
+          "confirmed_any": false,
+          "confirmed_every": false,
+          "alarm_any": false,
+          "requests": {
+            "n": 10,
+            "median": 13.0,
+            "min": 13,
+            "max": 13
+          }
+        },
+        {
+          "case": "sharing-read-disclosure_403",
+          "truth": "violation",
+          "root_cause": "stale_snapshot",
+          "repeats": 10,
+          "expected_verdict": "confirmed_violation",
+          "verdicts": {
+            "confirmed_violation": 10
+          },
+          "correctly_classified": 10,
+          "confirmed_any": true,
+          "confirmed_every": true,
+          "alarm_any": true,
+          "requests": {
+            "n": 10,
+            "median": 39.0,
+            "min": 39,
+            "max": 39
+          }
+        },
+        {
+          "case": "sharing-read-immediate",
+          "truth": "correct",
+          "root_cause": null,
+          "repeats": 10,
+          "expected_verdict": "no_violation_observed",
+          "verdicts": {
+            "no_violation_observed": 10
+          },
+          "correctly_classified": 10,
+          "confirmed_any": false,
+          "confirmed_every": false,
+          "alarm_any": false,
+          "requests": {
+            "n": 10,
+            "median": 13.0,
+            "min": 13,
+            "max": 13
+          }
+        },
+        {
+          "case": "sharing-read-public_metadata_200",
+          "truth": "correct",
+          "root_cause": null,
+          "repeats": 10,
+          "expected_verdict": "no_violation_observed",
+          "verdicts": {
+            "no_violation_observed": 10
+          },
+          "correctly_classified": 10,
+          "confirmed_any": false,
+          "confirmed_every": false,
+          "alarm_any": false,
+          "requests": {
+            "n": 10,
+            "median": 13.0,
+            "min": 13,
+            "max": 13
+          }
+        },
+        {
+          "case": "sharing-read-stale_session",
+          "truth": "violation",
+          "root_cause": "stale_snapshot",
+          "repeats": 10,
+          "expected_verdict": "confirmed_violation",
+          "verdicts": {
+            "confirmed_violation": 10
+          },
+          "correctly_classified": 10,
+          "confirmed_any": true,
+          "confirmed_every": true,
+          "alarm_any": true,
+          "requests": {
+            "n": 10,
+            "median": 39.0,
+            "min": 39,
+            "max": 39
+          }
+        },
+        {
+          "case": "sharing-read-unavailable",
+          "truth": "inconclusive",
+          "root_cause": null,
+          "repeats": 10,
+          "expected_verdict": "inconclusive",
+          "verdicts": {
+            "inconclusive": 10
+          },
+          "correctly_classified": 10,
+          "confirmed_any": false,
+          "confirmed_every": false,
+          "alarm_any": false,
+          "requests": {
+            "n": 10,
+            "median": 1.0,
+            "min": 1,
+            "max": 1
+          }
+        },
+        {
+          "case": "sharing-read-unknown_policy",
+          "truth": "inconclusive",
+          "root_cause": null,
+          "repeats": 10,
+          "expected_verdict": "inconclusive",
+          "verdicts": {
+            "inconclusive": 10
+          },
+          "correctly_classified": 10,
+          "confirmed_any": false,
+          "confirmed_every": false,
+          "alarm_any": false,
+          "requests": {
+            "n": 10,
+            "median": 0.0,
+            "min": 0,
+            "max": 0
+          }
+        },
+        {
+          "case": "sharing-read-write_side_effect",
+          "truth": "correct",
+          "root_cause": null,
+          "repeats": 10,
+          "expected_verdict": "no_violation_observed",
+          "verdicts": {
+            "no_violation_observed": 10
+          },
+          "correctly_classified": 10,
+          "confirmed_any": false,
+          "confirmed_every": false,
+          "alarm_any": false,
+          "requests": {
+            "n": 10,
+            "median": 13.0,
+            "min": 13,
+            "max": 13
+          }
+        },
+        {
+          "case": "sharing-write-delayed",
+          "truth": "correct",
+          "root_cause": null,
+          "repeats": 10,
+          "expected_verdict": "no_violation_observed",
+          "verdicts": {
+            "no_violation_observed": 10
+          },
+          "correctly_classified": 10,
+          "confirmed_any": false,
+          "confirmed_every": false,
+          "alarm_any": false,
+          "requests": {
+            "n": 10,
+            "median": 19.0,
+            "min": 19,
+            "max": 19
+          }
+        },
+        {
+          "case": "sharing-write-immediate",
+          "truth": "correct",
+          "root_cause": null,
+          "repeats": 10,
+          "expected_verdict": "no_violation_observed",
+          "verdicts": {
+            "no_violation_observed": 10
+          },
+          "correctly_classified": 10,
+          "confirmed_any": false,
+          "confirmed_every": false,
+          "alarm_any": false,
+          "requests": {
+            "n": 10,
+            "median": 19.0,
+            "min": 19,
+            "max": 19
+          }
+        },
+        {
+          "case": "sharing-write-stale_session",
+          "truth": "violation",
+          "root_cause": "stale_snapshot",
+          "repeats": 10,
+          "expected_verdict": "confirmed_violation",
+          "verdicts": {
+            "confirmed_violation": 10
+          },
+          "correctly_classified": 10,
+          "confirmed_any": true,
+          "confirmed_every": true,
+          "alarm_any": true,
+          "requests": {
+            "n": 10,
+            "median": 57.0,
+            "min": 57,
+            "max": 57
+          }
+        },
+        {
+          "case": "sharing-write-write_side_effect",
+          "truth": "violation",
+          "root_cause": "commit_before_denial",
+          "repeats": 10,
+          "expected_verdict": "confirmed_violation",
+          "verdicts": {
+            "confirmed_violation": 10
+          },
+          "correctly_classified": 10,
+          "confirmed_any": true,
+          "confirmed_every": true,
+          "alarm_any": true,
+          "requests": {
+            "n": 10,
+            "median": 57.0,
+            "min": 57,
+            "max": 57
+          }
+        }
+      ]
+    }
+  },
+  "tcp": {
+    "seeded-dag": {
+      "runs": 12,
+      "case_configurations": 4,
+      "statuses": {
+        "completed": 12
+      },
+      "verdicts": {
+        "no_violation_observed": 6,
+        "confirmed_violation": 6
+      },
+      "defect_configurations": {
+        "denominator": 2,
+        "detected_any_seed": 2,
+        "detected_every_seed": 2
+      },
+      "root_cause_families_detected": [
+        "commit_before_denial",
+        "stale_snapshot"
+      ],
+      "correct_configurations": {
+        "denominator": 2,
+        "with_any_alarm": 0,
+        "with_any_confirmed_alarm": 0
+      },
+      "expected_inconclusive_configurations": {
+        "denominator": 0,
+        "correct_every_seed": 0
+      },
+      "sequences": {
+        "collected": 24,
+        "completed": 24,
+        "oracle_valid": 24
+      },
+      "replay": {
+        "attempted": 12,
+        "matching_reproductions": 12
+      },
+      "requests_by_truth": {
+        "correct": {
+          "n": 6,
+          "median": 22.0,
+          "min": 22,
+          "max": 23
+        },
+        "violation": {
+          "n": 6,
+          "median": 61.0,
+          "min": 52,
+          "max": 71
+        },
+        "inconclusive": {
+          "n": 0,
+          "median": null,
+          "min": null,
+          "max": null
+        }
+      },
+      "wall_seconds": {
+        "n": 12,
+        "median": 10.84848740400048,
+        "min": 5.622820524000417,
+        "max": 16.06591681699865
+      },
+      "per_case": [
+        {
+          "case": "role-write-write_side_effect",
+          "truth": "violation",
+          "root_cause": "commit_before_denial",
+          "repeats": 3,
+          "expected_verdict": "confirmed_violation",
+          "verdicts": {
+            "confirmed_violation": 3
+          },
+          "correctly_classified": 3,
+          "confirmed_any": true,
+          "confirmed_every": true,
+          "alarm_any": true,
+          "requests": {
+            "n": 3,
+            "median": 71,
+            "min": 70,
+            "max": 71
+          }
+        },
+        {
+          "case": "sharing-read-delayed",
+          "truth": "correct",
+          "root_cause": null,
+          "repeats": 3,
+          "expected_verdict": "no_violation_observed",
+          "verdicts": {
+            "no_violation_observed": 3
+          },
+          "correctly_classified": 3,
+          "confirmed_any": false,
+          "confirmed_every": false,
+          "alarm_any": false,
+          "requests": {
+            "n": 3,
+            "median": 22,
+            "min": 22,
+            "max": 22
+          }
+        },
+        {
+          "case": "sharing-read-immediate",
+          "truth": "correct",
+          "root_cause": null,
+          "repeats": 3,
+          "expected_verdict": "no_violation_observed",
+          "verdicts": {
+            "no_violation_observed": 3
+          },
+          "correctly_classified": 3,
+          "confirmed_any": false,
+          "confirmed_every": false,
+          "alarm_any": false,
+          "requests": {
+            "n": 3,
+            "median": 23,
+            "min": 22,
+            "max": 23
+          }
+        },
+        {
+          "case": "sharing-read-stale_session",
+          "truth": "violation",
+          "root_cause": "stale_snapshot",
+          "repeats": 3,
+          "expected_verdict": "confirmed_violation",
+          "verdicts": {
+            "confirmed_violation": 3
+          },
+          "correctly_classified": 3,
+          "confirmed_any": true,
+          "confirmed_every": true,
+          "alarm_any": true,
+          "requests": {
+            "n": 3,
+            "median": 52,
+            "min": 52,
+            "max": 52
+          }
+        }
+      ]
+    },
+    "canonical-dag": {
+      "runs": 12,
+      "case_configurations": 4,
+      "statuses": {
+        "completed": 12
+      },
+      "verdicts": {
+        "confirmed_violation": 6,
+        "no_violation_observed": 6
+      },
+      "defect_configurations": {
+        "denominator": 2,
+        "detected_any_seed": 2,
+        "detected_every_seed": 2
+      },
+      "root_cause_families_detected": [
+        "commit_before_denial",
+        "stale_snapshot"
+      ],
+      "correct_configurations": {
+        "denominator": 2,
+        "with_any_alarm": 0,
+        "with_any_confirmed_alarm": 0
+      },
+      "expected_inconclusive_configurations": {
+        "denominator": 0,
+        "correct_every_seed": 0
+      },
+      "sequences": {
+        "collected": 24,
+        "completed": 24,
+        "oracle_valid": 24
+      },
+      "replay": {
+        "attempted": 12,
+        "matching_reproductions": 12
+      },
+      "requests_by_truth": {
+        "correct": {
+          "n": 6,
+          "median": 23.0,
+          "min": 22,
+          "max": 23
+        },
+        "violation": {
+          "n": 6,
+          "median": 61.5,
+          "min": 52,
+          "max": 70
+        },
+        "inconclusive": {
+          "n": 0,
+          "median": null,
+          "min": null,
+          "max": null
+        }
+      },
+      "wall_seconds": {
+        "n": 12,
+        "median": 10.850259474000268,
+        "min": 5.625240898996708,
+        "max": 16.06370982700173
+      },
+      "per_case": [
+        {
+          "case": "role-write-write_side_effect",
+          "truth": "violation",
+          "root_cause": "commit_before_denial",
+          "repeats": 3,
+          "expected_verdict": "confirmed_violation",
+          "verdicts": {
+            "confirmed_violation": 3
+          },
+          "correctly_classified": 3,
+          "confirmed_any": true,
+          "confirmed_every": true,
+          "alarm_any": true,
+          "requests": {
+            "n": 3,
+            "median": 70,
+            "min": 70,
+            "max": 70
+          }
+        },
+        {
+          "case": "sharing-read-delayed",
+          "truth": "correct",
+          "root_cause": null,
+          "repeats": 3,
+          "expected_verdict": "no_violation_observed",
+          "verdicts": {
+            "no_violation_observed": 3
+          },
+          "correctly_classified": 3,
+          "confirmed_any": false,
+          "confirmed_every": false,
+          "alarm_any": false,
+          "requests": {
+            "n": 3,
+            "median": 22,
+            "min": 22,
+            "max": 23
+          }
+        },
+        {
+          "case": "sharing-read-immediate",
+          "truth": "correct",
+          "root_cause": null,
+          "repeats": 3,
+          "expected_verdict": "no_violation_observed",
+          "verdicts": {
+            "no_violation_observed": 3
+          },
+          "correctly_classified": 3,
+          "confirmed_any": false,
+          "confirmed_every": false,
+          "alarm_any": false,
+          "requests": {
+            "n": 3,
+            "median": 23,
+            "min": 23,
+            "max": 23
+          }
+        },
+        {
+          "case": "sharing-read-stale_session",
+          "truth": "violation",
+          "root_cause": "stale_snapshot",
+          "repeats": 3,
+          "expected_verdict": "confirmed_violation",
+          "verdicts": {
+            "confirmed_violation": 3
+          },
+          "correctly_classified": 3,
+          "confirmed_any": true,
+          "confirmed_every": true,
+          "alarm_any": true,
+          "requests": {
+            "n": 3,
+            "median": 52,
+            "min": 52,
+            "max": 53
+          }
+        }
+      ]
+    },
+    "seeded-minimal": {
+      "runs": 12,
+      "case_configurations": 4,
+      "statuses": {
+        "completed": 12
+      },
+      "verdicts": {
+        "confirmed_violation": 6,
+        "no_violation_observed": 6
+      },
+      "defect_configurations": {
+        "denominator": 2,
+        "detected_any_seed": 2,
+        "detected_every_seed": 2
+      },
+      "root_cause_families_detected": [
+        "commit_before_denial",
+        "stale_snapshot"
+      ],
+      "correct_configurations": {
+        "denominator": 2,
+        "with_any_alarm": 0,
+        "with_any_confirmed_alarm": 0
+      },
+      "expected_inconclusive_configurations": {
+        "denominator": 0,
+        "correct_every_seed": 0
+      },
+      "sequences": {
+        "collected": 24,
+        "completed": 24,
+        "oracle_valid": 24
+      },
+      "replay": {
+        "attempted": 12,
+        "matching_reproductions": 12
+      },
+      "requests_by_truth": {
+        "correct": {
+          "n": 6,
+          "median": 20.0,
+          "min": 20,
+          "max": 21
+        },
+        "violation": {
+          "n": 6,
+          "median": 55.5,
+          "min": 46,
+          "max": 65
+        },
+        "inconclusive": {
+          "n": 0,
+          "median": null,
+          "min": null,
+          "max": null
+        }
+      },
+      "wall_seconds": {
+        "n": 12,
+        "median": 10.894056000499404,
+        "min": 5.623690389998956,
+        "max": 16.07035938500121
+      },
+      "per_case": [
+        {
+          "case": "role-write-write_side_effect",
+          "truth": "violation",
+          "root_cause": "commit_before_denial",
+          "repeats": 3,
+          "expected_verdict": "confirmed_violation",
+          "verdicts": {
+            "confirmed_violation": 3
+          },
+          "correctly_classified": 3,
+          "confirmed_any": true,
+          "confirmed_every": true,
+          "alarm_any": true,
+          "requests": {
+            "n": 3,
+            "median": 65,
+            "min": 64,
+            "max": 65
+          }
+        },
+        {
+          "case": "sharing-read-delayed",
+          "truth": "correct",
+          "root_cause": null,
+          "repeats": 3,
+          "expected_verdict": "no_violation_observed",
+          "verdicts": {
+            "no_violation_observed": 3
+          },
+          "correctly_classified": 3,
+          "confirmed_any": false,
+          "confirmed_every": false,
+          "alarm_any": false,
+          "requests": {
+            "n": 3,
+            "median": 20,
+            "min": 20,
+            "max": 21
+          }
+        },
+        {
+          "case": "sharing-read-immediate",
+          "truth": "correct",
+          "root_cause": null,
+          "repeats": 3,
+          "expected_verdict": "no_violation_observed",
+          "verdicts": {
+            "no_violation_observed": 3
+          },
+          "correctly_classified": 3,
+          "confirmed_any": false,
+          "confirmed_every": false,
+          "alarm_any": false,
+          "requests": {
+            "n": 3,
+            "median": 20,
+            "min": 20,
+            "max": 20
+          }
+        },
+        {
+          "case": "sharing-read-stale_session",
+          "truth": "violation",
+          "root_cause": "stale_snapshot",
+          "repeats": 3,
+          "expected_verdict": "confirmed_violation",
+          "verdicts": {
+            "confirmed_violation": 3
+          },
+          "correctly_classified": 3,
+          "confirmed_any": true,
+          "confirmed_every": true,
+          "alarm_any": true,
+          "requests": {
+            "n": 3,
+            "median": 46,
+            "min": 46,
+            "max": 47
+          }
+        }
+      ]
+    }
+  },
+  "posthoc": {
+    "old-only": {
+      "scope": "Retrospective signal sensitivity; no independently executed baseline or saved-query claim",
+      "runs": 290,
+      "signals_on_defective_runs": 100,
+      "defective_run_denominator": 100,
+      "signals_on_correct_runs": 0,
+      "correct_run_denominator": 160,
+      "confirmation_selection_bias": "Only full-method candidates have two clean replays available in this projection"
+    },
+    "fresh-only": {
+      "scope": "Retrospective signal sensitivity; no independently executed baseline or saved-query claim",
+      "runs": 290,
+      "signals_on_defective_runs": 30,
+      "defective_run_denominator": 100,
+      "signals_on_correct_runs": 0,
+      "correct_run_denominator": 160,
+      "confirmation_selection_bias": "Only full-method candidates have two clean replays available in this projection"
+    },
+    "status-only": {
+      "scope": "Retrospective signal sensitivity; no independently executed baseline or saved-query claim",
+      "runs": 290,
+      "signals_on_defective_runs": 60,
+      "defective_run_denominator": 100,
+      "signals_on_correct_runs": 10,
+      "correct_run_denominator": 160,
+      "confirmation_selection_bias": "Only full-method candidates have two clean replays available in this projection"
+    }
+  },
+  "external": {
+    "gitea": {
+      "temporal": {
+        "runs": 10,
+        "statuses": {
+          "completed": 10
+        },
+        "verdicts": {
+          "no_violation_observed": 10
+        },
+        "requests": {
+          "n": 10,
+          "median": 32.0,
+          "min": 27,
+          "max": 55
+        },
+        "elapsed_seconds": {
+          "n": 10,
+          "median": 1.8765392445002362,
+          "min": 1.3183164829970337,
+          "max": 3.052155732999381
+        },
+        "natural_defect_recall": null
+      },
+      "p4-single-event": {
+        "runs": 10,
+        "statuses": {
+          "completed": 10
+        },
+        "verdicts": {
+          "no_violation_observed": 10
+        },
+        "requests": {
+          "n": 10,
+          "median": 31.5,
+          "min": 26,
+          "max": 40
+        },
+        "elapsed_seconds": {
+          "n": 10,
+          "median": 1.7319164790023933,
+          "min": 1.603703795997717,
+          "max": 2.2933112979990256
+        },
+        "natural_defect_recall": null
+      },
+      "generic-valid-order": {
+        "runs": 10,
+        "statuses": {
+          "completed": 10
+        },
+        "verdicts": {
+          "no_violation_observed": 10
+        },
+        "requests": {
+          "n": 10,
+          "median": 36.5,
+          "min": 27,
+          "max": 41
+        },
+        "elapsed_seconds": {
+          "n": 10,
+          "median": 2.0041607989987824,
+          "min": 1.2511889419984072,
+          "max": 2.2210761409987754
+        },
+        "natural_defect_recall": null
+      }
+    },
+    "pocketbase": {
+      "temporal": {
+        "runs": 10,
+        "statuses": {
+          "completed": 10
+        },
+        "verdicts": {
+          "no_violation_observed": 10
+        },
+        "requests": {
+          "n": 10,
+          "median": 16.0,
+          "min": 16,
+          "max": 16
+        },
+        "elapsed_seconds": {
+          "n": 10,
+          "median": 0.49700834900068,
+          "min": 0.45372429599956376,
+          "max": 1.5654763789971184
+        },
+        "natural_defect_recall": null
+      },
+      "p4-single-event": {
+        "runs": 10,
+        "statuses": {
+          "completed": 10
+        },
+        "verdicts": {
+          "no_violation_observed": 10
+        },
+        "requests": {
+          "n": 10,
+          "median": 15.0,
+          "min": 14,
+          "max": 15
+        },
+        "elapsed_seconds": {
+          "n": 10,
+          "median": 0.5121541009993962,
+          "min": 0.44628188199931174,
+          "max": 0.5440912779995415
+        },
+        "natural_defect_recall": null
+      },
+      "generic-valid-order": {
+        "runs": 10,
+        "statuses": {
+          "completed": 10
+        },
+        "verdicts": {
+          "no_violation_observed": 10
+        },
+        "requests": {
+          "n": 10,
+          "median": 18.0,
+          "min": 18,
+          "max": 18
+        },
+        "elapsed_seconds": {
+          "n": 10,
+          "median": 0.5464171805015212,
+          "min": 0.4723701129987603,
+          "max": 0.5743206799998006
+        },
+        "natural_defect_recall": null
+      }
+    }
+  },
+  "native": [
+    {
+      "target": "pocketbase",
+      "method": "evomaster",
+      "comparison": "native compatibility smoke; not an input-matched effectiveness benchmark",
+      "compile_exit_code": null,
+      "elapsed_seconds": 14.629644288997952,
+      "error": null,
+      "exit_code": 0,
+      "fixture_requests": 2,
+      "fuzz_exit_code": null,
+      "inputs": "curated native endpoint slice, fixed resource IDs, owner and old-subject bearer tokens",
+      "limitations": [
+        "No fresh-login lifecycle annotation or propagation bound consumed by native tool",
+        "No per-test reset; fixture isolated once per invocation",
+        "Native fault labels are not clean-confirmed authorization findings"
+      ],
+      "native_forwarded_requests": 112,
+      "request_cap_reached": false,
+      "status": "completed",
+      "tool": "EvoMaster",
+      "total_requests": 121,
+      "verdict": "not_evaluated"
+    },
+    {
+      "target": "gitea",
+      "method": "restler",
+      "comparison": "native compatibility smoke; not an input-matched effectiveness benchmark",
+      "compile_exit_code": 0,
+      "elapsed_seconds": 5.927789948997088,
+      "error": null,
+      "exit_code": null,
+      "fixture_requests": 22,
+      "fuzz_exit_code": 0,
+      "inputs": "native endpoint slice, fixed resource IDs, primary owner and unrelated unauthorized attacker",
+      "limitations": [
+        "Old/fresh recipient lifecycle and timing annotations are not consumed by native tool",
+        "UseAfterFree is enabled; collaborator removal does not delete the protected repository",
+        "No per-test reset; fixture isolated once per invocation",
+        "Native bug buckets are not clean-confirmed authorization findings"
+      ],
+      "native_forwarded_requests": 4,
+      "request_cap_reached": null,
+      "status": "completed",
+      "tool": "RESTler",
+      "total_requests": 37,
+      "verdict": "not_evaluated"
+    },
+    {
+      "target": "pocketbase",
+      "method": "restler",
+      "comparison": "native compatibility smoke; not an input-matched effectiveness benchmark",
+      "compile_exit_code": 0,
+      "elapsed_seconds": 3.940178470002138,
+      "error": null,
+      "exit_code": null,
+      "fixture_requests": 2,
+      "fuzz_exit_code": 0,
+      "inputs": "native endpoint slice, fixed resource IDs, primary owner and unrelated unauthorized attacker",
+      "limitations": [
+        "Old/fresh recipient lifecycle and timing annotations are not consumed by native tool",
+        "UseAfterFree is enabled; collaborator removal does not delete the protected repository",
+        "No per-test reset; fixture isolated once per invocation",
+        "Native bug buckets are not clean-confirmed authorization findings"
+      ],
+      "native_forwarded_requests": 3,
+      "request_cap_reached": null,
+      "status": "completed",
+      "tool": "RESTler",
+      "total_requests": 15,
+      "verdict": "not_evaluated"
+    },
+    {
+      "target": "gitea",
+      "method": "evomaster",
+      "comparison": "native compatibility smoke; not an input-matched effectiveness benchmark",
+      "compile_exit_code": null,
+      "elapsed_seconds": 17.711200555000687,
+      "error": null,
+      "exit_code": 0,
+      "fixture_requests": 21,
+      "fuzz_exit_code": null,
+      "inputs": "curated native endpoint slice, fixed resource IDs, owner and old-subject bearer tokens",
+      "limitations": [
+        "No fresh-login lifecycle annotation or propagation bound consumed by native tool",
+        "No per-test reset; fixture isolated once per invocation",
+        "Native fault labels are not clean-confirmed authorization findings"
+      ],
+      "native_forwarded_requests": 126,
+      "request_cap_reached": false,
+      "status": "completed",
+      "tool": "EvoMaster",
+      "total_requests": 155,
+      "verdict": "not_evaluated"
+    }
+  ],
+  "all_frozen_rows_recorded": true,
+  "controlled_paired": {
+    "complete_pairs": 290,
+    "same_verdict_across_all_methods": 290,
+    "seeded_minus_minimal_requests": {
+      "n": 290,
+      "median": 2.0,
+      "min": 0,
+      "max": 6
+    }
+  },
+  "tcp_paired": {
+    "complete_pairs": 12,
+    "same_verdict_across_all_methods": 12,
+    "seeded_minus_minimal_requests": {
+      "n": 12,
+      "median": 4.0,
+      "min": 1,
+      "max": 7
+    }
+  },
+  "early_diagnostic": {
+    "traces": 60,
+    "unsafe_signals_on_correct_delayed_fixtures": 60,
+    "production_oracle_inconclusive": 60,
+    "production_oracle_reasons": {
+      "probe_before_deadline": 60
+    },
+    "scope": "No clean confirmation; early access is permitted by policy and is not a defect"
+  },
+  "minimization": {
+    "runs": 9,
+    "completed": 9,
+    "action_reduction": {
+      "n": 9,
+      "median": 2,
+      "min": 2,
+      "max": 2
+    },
+    "search_requests": {
+      "n": 9,
+      "median": 117,
+      "min": 81,
+      "max": 117
+    },
+    "scope": "Greedy deletion of two optional warmups; production reducer independently confirms accepted reductions"
+  },
+  "harness_errors": [],
+  "research_readiness": {
+    "held_out_defect_families": false,
+    "independent_mutation_review": false,
+    "matched_native_tool_effectiveness": false,
+    "novelty_cleared": false,
+    "scope": "Completion of an artifact campaign does not complete the broader publication-readiness gates"
+  }
+}
